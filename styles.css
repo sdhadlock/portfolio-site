@@ -388,6 +388,31 @@ nav .nav-links a:hover {
     transform: translateX(4px);
 }
 
+/* ---------- Strava Stats ---------- */
+.strava-stats {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+}
+
+.strava-meta {
+    margin-top: 1rem;
+    font-size: 0.82rem;
+    color: var(--faint);
+}
+
+.strava-meta a {
+    color: var(--faint);
+    text-decoration: underline;
+}
+
+.strava-meta a:hover {
+    color: var(--accent);
+}
+
 /* ---------- Contact ---------- */
 .join-section {
     background: var(--panel);

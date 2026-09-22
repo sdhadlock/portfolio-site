@@ -30,3 +30,34 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Live Strava stats — data/strava-stats.json is refreshed on a schedule by
+// .github/workflows/strava-stats.yml (see STRAVA_SETUP.md). Only present on
+// pages that have the #strava-run / #strava-ride elements.
+(function loadStravaStats() {
+    const runEl = document.getElementById('strava-run');
+    const rideEl = document.getElementById('strava-ride');
+    const weekRideEl = document.getElementById('strava-week-ride');
+    const metaEl = document.getElementById('strava-meta');
+    if (!runEl && !rideEl && !weekRideEl) return;
+
+    fetch('data/strava-stats.json', { cache: 'no-store' })
+        .then(res => (res.ok ? res.json() : null))
+        .then(data => {
+            if (!data) return;
+            if (runEl && data.allTimeRunMiles != null) runEl.textContent = data.allTimeRunMiles.toLocaleString();
+            if (rideEl && data.allTimeRideMiles != null) rideEl.textContent = data.allTimeRideMiles.toLocaleString();
+            if (weekRideEl && data.weeklyBikeMiles != null) weekRideEl.textContent = data.weeklyBikeMiles.toLocaleString();
+            if (metaEl && data.updatedAt) {
+                const date = new Date(data.updatedAt).toLocaleDateString('en-US', {
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric',
+                });
+                metaEl.innerHTML = `Live totals via <a href="https://www.strava.com" target="_blank" rel="noopener">Strava</a> · updated ${date}`;
+            }
+        })
+        .catch(() => {
+            // Leave the placeholder "—" values in place if the fetch fails.
+        });
+})();
