@@ -1,333 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Spencer Hadlock — Electrical and Computer Engineering student at Cornell University. FPGA, RTL design, embedded systems, and PCB development.">
-  <title>Spencer Hadlock — Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Spencer Hadlock — Electrical and Computer Engineering student at Cornell University. FPGA, RTL design, embedded systems, and PCB development.">
+    <title>Spencer Hadlock — Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<nav>
-  <a href="#" class="nav-logo">Spencer Hadlock<span class="dot">.</span></a>
-  <ul class="nav-links">
-    <li><a href="#about">about</a></li>
-    <li><a href="#education">education</a></li>
-    <li><a href="#experience">experience</a></li>
-    <li><a href="#projects">projects</a></li>
-    <li><a href="#skills">skills</a></li>
-    <li><a href="#contact">contact</a></li>
-  </ul>
-  <div class="nav-avail"><div class="dot-sm"></div>open to opportunities</div>
-  <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<div class="hero">
-  <div class="hero-left">
-    <div>
-      <div class="hero-label">ECE @ Cornell University · Ithaca, NY</div>
-      <h1>Spencer<br><span class="dim">Hadlock<span class="cyan">.</span></span></h1>
-      <p class="hero-desc">
-        I build systems where hardware, software, and the physical world meet — FPGA design, RTL verification, embedded systems, PCB development, and digital communications.
-      </p>
-    </div>
-    <div class="hero-bottom">
-      <a href="#projects" class="btn cyan">view work</a>
-      <a href="#contact" class="btn">get in touch</a>
-      <a href="SpencerHadlockResume.pdf" class="btn" target="_blank">resume</a>
-    </div>
-  </div>
-
-  <div class="hero-right">
-    <div>
-      <div class="hero-right-label">by the numbers</div>
-      <div class="stat-col">
-        <div class="sc-item">
-          <div class="sc-val">3.74</div>
-          <div class="sc-label">cumulative GPA<br>at Cornell University</div>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Spencer Hadlock</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
         </div>
-        <div class="sc-item">
-          <div class="sc-val">5+</div>
-          <div class="sc-label">years of hands-on<br>electrical experience</div>
-        </div>
-        <div class="sc-item">
-          <div class="sc-val">'26</div>
-          <div class="sc-label">expected graduation,<br>December 2026</div>
-        </div>
-      </div>
-    </div>
-    <div class="hero-right-bottom">
-      <div class="availability-box">
-        <div class="avail-label">Current Status</div>
-        <div class="avail-status"><div class="dot-sm"></div>Open to full-time engineering roles</div>
-      </div>
-    </div>
-  </div>
-</div>
+    </nav>
 
-<section id="about" class="section">
-  <div class="sec-label">about</div>
-  <h2>I build hardware<br>that thinks fast.</h2>
-  <div class="about-grid">
-    <div class="about-text">
-      <p>I'm a Cornell Electrical and Computer Engineering student interested in digital hardware, embedded systems, PCB design, and computer architecture. My background combines academic engineering, hands-on electrical construction, processor verification, robotics, and software development.</p>
-      <p>I enjoy projects that require both detailed technical reasoning and hands-on problem solving. I've worked on processor and memory-system verification, digital logic, embedded systems, PCB design, machine learning, digital communications, and autonomous robotics — and spent more than five years as an apprentice electrician, learning how designs become real installations.</p>
-      <p>Outside of engineering, I'm an Eagle Scout, a certified interior firefighter, and a climbing instructor. I'm particularly interested in FPGA, RTL, computer architecture, and embedded systems roles where careful engineering produces measurable real-world performance.</p>
-    </div>
-    <div class="about-panel">
-      <div class="ap-row"><span class="ap-key">name</span><span class="ap-val">Spencer Hadlock</span></div>
-      <div class="ap-row"><span class="ap-key">school</span><span class="ap-val">Cornell University</span></div>
-      <div class="ap-row"><span class="ap-key">major</span><span class="ap-val">Electrical &amp; Computer Eng.</span></div>
-      <div class="ap-row"><span class="ap-key">gpa</span><span class="ap-val">3.74 / 4.00</span></div>
-      <div class="ap-row"><span class="ap-key">focus</span><span class="ap-val">FPGA · RTL · Embedded · PCB</span></div>
-      <div class="ap-row"><span class="ap-key">location</span><span class="ap-val">Ithaca, NY</span></div>
-      <div class="ap-row"><span class="ap-key">status</span><span class="ap-val cyan">open_to_work</span></div>
-    </div>
-  </div>
-</section>
+    <main>
+        <section class="hero">
+            <div class="hero-badge"><span class="dot-sm"></span>Open to full-time engineering roles</div>
+            <h1>Spencer Hadlock</h1>
+            <p>ECE student at Cornell University building hardware that thinks fast — FPGA design, RTL verification, embedded systems, PCB development, and digital communications.</p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">View my work</a>
+                <a href="#contact" class="btn">Get in touch</a>
+                <a href="SpencerHadlockResume.pdf" class="btn" target="_blank">Resume</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-val">3.74</div>
+                    <div class="stat-label">Cumulative GPA</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-val">5+</div>
+                    <div class="stat-label">Years hands-on electrical experience</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-val">'26</div>
+                    <div class="stat-label">Expected graduation</div>
+                </div>
+            </div>
+        </section>
 
-<section id="education" class="section">
-  <div class="sec-label">education</div>
-  <h2>Education</h2>
-  <div class="edu-grid">
-    <div class="edu-card">
-      <div>
-        <div class="edu-school">Cornell University</div>
-        <div class="edu-meta">B.S. Electrical &amp; Computer Engineering · Ithaca, NY · Expected Dec 2026 · GPA 3.74/4.00</div>
-      </div>
-      <p class="edu-desc">Focused on digital hardware, embedded systems, computer architecture, signal processing, communications, machine learning, and electromagnetics. George &amp; Marie Zahakos Scholarship recipient, 2023–2026. Spring 2026 term GPA: 4.047.</p>
-      <div class="edu-tags">
-        <span class="edu-tag">Computer Architecture</span>
-        <span class="edu-tag">Digital Logic</span>
-        <span class="edu-tag">Embedded Systems</span>
-        <span class="edu-tag">Digital Communications</span>
-        <span class="edu-tag">Signals &amp; Systems</span>
-        <span class="edu-tag">Machine Learning</span>
-        <span class="edu-tag">Radar &amp; Remote Sensing</span>
-      </div>
-    </div>
-    <div class="edu-card">
-      <div>
-        <div class="edu-school">SUNY Westchester Community College</div>
-        <div class="edu-meta">A.S. Mathematics &amp; Science · Valhalla, NY · May 2024 · GPA 3.92/4.00</div>
-      </div>
-      <p class="edu-desc">Graduated with Highest Distinction, one of six valedictorian candidates in a class of ~1,300. Phi Theta Kappa Honor Society. Built a strong foundation in mathematics, physics, chemistry, and programming before transferring to Cornell.</p>
-      <div class="edu-tags">
-        <span class="edu-tag">Calculus I–III</span>
-        <span class="edu-tag">Engineering Physics</span>
-        <span class="edu-tag">Electrical Circuits</span>
-        <span class="edu-tag">Computer Programming</span>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="container">
+            <section id="about" class="section">
+                <h2>About</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>I'm a Cornell Electrical and Computer Engineering student interested in digital hardware, embedded systems, PCB design, and computer architecture. My background combines academic engineering, hands-on electrical construction, processor verification, robotics, and software development.</p>
+                        <p>I enjoy projects that require both detailed technical reasoning and hands-on problem solving. I've worked on processor and memory-system verification, digital logic, embedded systems, PCB design, machine learning, digital communications, and autonomous robotics — and spent more than five years as an apprentice electrician, learning how designs become real installations.</p>
+                        <p>Outside of engineering, I'm an Eagle Scout, a certified interior firefighter, and a climbing instructor. I'm particularly interested in FPGA, RTL, computer architecture, and embedded systems roles where careful engineering produces measurable real-world performance.</p>
+                    </div>
+                    <div class="fact-card">
+                        <div class="fact-row"><span class="fact-key">Name</span><span class="fact-val">Spencer Hadlock</span></div>
+                        <div class="fact-row"><span class="fact-key">School</span><span class="fact-val">Cornell University</span></div>
+                        <div class="fact-row"><span class="fact-key">Major</span><span class="fact-val">Electrical &amp; Computer Eng.</span></div>
+                        <div class="fact-row"><span class="fact-key">GPA</span><span class="fact-val">3.74 / 4.00</span></div>
+                        <div class="fact-row"><span class="fact-key">Focus</span><span class="fact-val">FPGA · RTL · Embedded · PCB</span></div>
+                        <div class="fact-row"><span class="fact-key">Location</span><span class="fact-val">Ithaca, NY</span></div>
+                        <div class="fact-row"><span class="fact-key">Status</span><span class="fact-val accent">Open to work</span></div>
+                    </div>
+                </div>
+            </section>
 
-<section id="experience" class="section">
-  <div class="sec-label">experience</div>
-  <h2>Where I've Worked</h2>
-  <div class="proj-list">
-    <div class="proj">
-      <span class="proj-num">01</span>
-      <div class="proj-body">
-        <h3>Course Development Intern</h3>
-        <div class="proj-meta">Cornell University Dept. of ECE · May 2026 – Aug 2026</div>
-        <p>Built SystemVerilog integration testbenches for a single-cycle processor and its memory-bus and SPI interfaces, using positive, negative, reset, and timing-sensitive test cases. Diagnosed failures through waveform analysis and cross-module signal tracing, refactored a 63-module codebase used across four course labs, and built a submission workflow for ~120 students.</p>
-        <div class="proj-tags">
-          <span class="proj-tag blue">SystemVerilog</span>
-          <span class="proj-tag blue">RTL Verification</span>
-          <span class="proj-tag blue">Testbenches</span>
-          <span class="proj-tag">Surfer</span>
-          <span class="proj-tag">Git</span>
+            <section id="education" class="section">
+                <h2>Education</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>Cornell University</h3>
+                        <div class="card-meta">B.S. Electrical &amp; Computer Engineering · Ithaca, NY · Expected Dec 2026 · GPA 3.74/4.00</div>
+                        <p>Focused on digital hardware, embedded systems, computer architecture, signal processing, communications, machine learning, and electromagnetics. George &amp; Marie Zahakos Scholarship recipient, 2023–2026. Spring 2026 term GPA: 4.047.</p>
+                        <div class="tag-row">
+                            <span class="tag">Computer Architecture</span>
+                            <span class="tag">Digital Logic</span>
+                            <span class="tag">Embedded Systems</span>
+                            <span class="tag">Digital Communications</span>
+                            <span class="tag">Signals &amp; Systems</span>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Radar &amp; Remote Sensing</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>SUNY Westchester Community College</h3>
+                        <div class="card-meta">A.S. Mathematics &amp; Science · Valhalla, NY · May 2024 · GPA 3.92/4.00</div>
+                        <p>Graduated with Highest Distinction, one of six valedictorian candidates in a class of ~1,300. Phi Theta Kappa Honor Society. Built a strong foundation in mathematics, physics, chemistry, and programming before transferring to Cornell.</p>
+                        <div class="tag-row">
+                            <span class="tag">Calculus I–III</span>
+                            <span class="tag">Engineering Physics</span>
+                            <span class="tag">Electrical Circuits</span>
+                            <span class="tag">Computer Programming</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" class="section">
+                <h2>Experience</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>Course Development Intern</h3>
+                        <div class="card-meta">Cornell University Dept. of ECE · May 2026 – Aug 2026</div>
+                        <p>Built SystemVerilog integration testbenches for a single-cycle processor and its memory-bus and SPI interfaces, using positive, negative, reset, and timing-sensitive test cases. Diagnosed failures through waveform analysis and cross-module signal tracing, refactored a 63-module codebase used across four course labs, and built a submission workflow for ~120 students.</p>
+                        <div class="tag-row">
+                            <span class="tag tag-accent">SystemVerilog</span>
+                            <span class="tag tag-accent">RTL Verification</span>
+                            <span class="tag tag-accent">Testbenches</span>
+                            <span class="tag">Surfer</span>
+                            <span class="tag">Git</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>Electrical Subteam Member — Cornell Nexus</h3>
+                        <div class="card-meta">Cornell Nexus Project Team · Sep 2025 – Present</div>
+                        <p>Design and integrate electronics for an autonomous robotic system. Contributed to five custom PCBs in Altium spanning power distribution, communication, sensing, and signal processing, coordinating requirements with mechanical and software subteams and supporting board bring-up and debugging.</p>
+                        <div class="tag-row">
+                            <span class="tag tag-accent">Altium Designer</span>
+                            <span class="tag tag-accent">PCB Design</span>
+                            <span class="tag">Schematic Capture</span>
+                            <span class="tag">Embedded Systems</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>Apprentice Electrician</h3>
+                        <div class="card-meta">Lewisboro Electrical Services · Jun 2020 – Present</div>
+                        <p>Installed, upgraded, and troubleshot residential and commercial electrical systems for more than five years. Read drawings, followed NEC and local code, coordinated with general contractors and other trades, and programmed Lutron HomeWorks and RadioRA 3 automation systems using Designer Pro.</p>
+                        <div class="tag-row">
+                            <span class="tag">Electrical Construction</span>
+                            <span class="tag">NEC Code</span>
+                            <span class="tag">Lutron Automation</span>
+                            <span class="tag">Troubleshooting</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="section">
+                <h2>Projects</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>Direct-Mapped Cache RTL Design</h3>
+                        <div class="card-meta">Digital Hardware · Computer Architecture · SystemVerilog</div>
+                        <p>A direct-mapped cache in SystemVerilog combining a combinational tag-comparison path for single-cycle hits with a finite-state machine that handles misses, memory requests, line refills, and metadata updates under a wait-based memory handshake. Verified with directed testbenches covering hits, misses, refills, and replacement.</p>
+                        <div class="tag-row">
+                            <span class="tag tag-accent">SystemVerilog</span>
+                            <span class="tag tag-accent">Cache Design</span>
+                            <span class="tag tag-accent">FSM</span>
+                            <span class="tag">Verification</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>OFDM Audio Communication System</h3>
+                        <div class="card-meta">Digital Communications · Signal Processing · Python</div>
+                        <p>An end-to-end OFDM modem transmitting digital data through speakers and microphones at approximately 70 kbps. The transmitter maps data into Gray-coded QAM symbols with adaptive per-subcarrier bit loading; the receiver handles frame synchronization, clock-skew correction, channel estimation, and equalization.</p>
+                        <div class="tag-row">
+                            <span class="tag tag-accent">OFDM</span>
+                            <span class="tag tag-accent">Python</span>
+                            <span class="tag">QAM</span>
+                            <span class="tag">Signal Processing</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>Multi-Label Digit Classification</h3>
+                        <div class="card-meta">Machine Learning · Computer Vision · Python</div>
+                        <p>A dual-output image-classification system that identifies two overlaid handwritten digits per image. Trained and compared CNNs, SVMs, and baseline approaches with data augmentation, cross-validation, and error analysis, reaching approximately 97% test accuracy.</p>
+                        <div class="tag-row">
+                            <span class="tag tag-accent">PyTorch</span>
+                            <span class="tag tag-accent">CNN</span>
+                            <span class="tag">scikit-learn</span>
+                            <span class="tag">Computer Vision</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>Study Partner Matching App</h3>
+                        <div class="card-meta">Full-Stack Software · Android · Backend Development</div>
+                        <p>A full-stack Android application that matches students with compatible study partners using schedule availability, course overlap, and study preferences. Built the backend data structures and API workflow, storing user profiles and schedules in a relational database and returning matches to the Android front end.</p>
+                        <div class="tag-row">
+                            <span class="tag tag-accent">Android</span>
+                            <span class="tag tag-accent">REST API</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">Backend</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="section">
+                <h2>Skills</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>HDL &amp; Digital Design</h3>
+                        <div class="tag-row">
+                            <span class="tag">SystemVerilog / Verilog</span>
+                            <span class="tag">RTL Design</span>
+                            <span class="tag">Testbench Development</span>
+                            <span class="tag">Waveform Debugging</span>
+                            <span class="tag">Intel Quartus</span>
+                            <span class="tag">Verilator / IVerilog</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>Programming &amp; Data</h3>
+                        <div class="tag-row">
+                            <span class="tag">Python</span>
+                            <span class="tag">C++ / Java</span>
+                            <span class="tag">MATLAB</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">PyTorch / scikit-learn</span>
+                            <span class="tag">NumPy / pandas</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>Hardware &amp; PCB</h3>
+                        <div class="tag-row">
+                            <span class="tag">Altium Designer</span>
+                            <span class="tag">Embedded Systems</span>
+                            <span class="tag">Schematic Capture</span>
+                            <span class="tag">Sensor Integration</span>
+                            <span class="tag">Electrical Troubleshooting</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>Engineering Tools</h3>
+                        <div class="tag-row">
+                            <span class="tag">Linux / Git</span>
+                            <span class="tag">Fusion 360</span>
+                            <span class="tag">SolidWorks</span>
+                            <span class="tag">Surfer</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="interests" class="section">
+                <h2>Beyond Engineering</h2>
+                <p class="section-intro">Many of the habits I bring to technical work come from the outdoors and hands-on hobbies — patience, self-reliance, and a lot of iteration.</p>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>Backpacking &amp; Camping</h3>
+                        <p>Multi-day trips that require route planning, gear selection, and adapting to changing conditions.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Rock Climbing</h3>
+                        <p>Technical movement and risk management. I climb personally and teach beginners through Cornell Outdoor Education.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Skiing</h3>
+                        <p>A favorite way to spend winter — terrain awareness, technical improvement, and exploration.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Slacklining</h3>
+                        <p>Balance, focus, and incremental improvement — a useful contrast to long stretches of technical work.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="section join-section">
+                <h2>Let's build something.</h2>
+                <p class="section-intro">I'm interested in full-time opportunities involving FPGA development, RTL design, embedded systems, computer architecture, PCB design, and hardware verification.</p>
+                <div class="contact-row">
+                    <a href="mailto:sdh228@cornell.edu" class="contact-link">sdh228@cornell.edu<span class="arrow">→</span></a>
+                    <a href="https://github.com/sdhadlock" class="contact-link" target="_blank" rel="noopener">github.com/sdhadlock<span class="arrow">→</span></a>
+                    <a href="https://linkedin.com/in/spencer-hadlock" class="contact-link" target="_blank" rel="noopener">linkedin / spencer-hadlock<span class="arrow">→</span></a>
+                    <a href="SpencerHadlockResume.pdf" class="contact-link" target="_blank">Resume (PDF)<span class="arrow">↓</span></a>
+                </div>
+            </section>
         </div>
-      </div>
-      <div class="proj-links"></div>
-    </div>
-    <div class="proj">
-      <span class="proj-num">02</span>
-      <div class="proj-body">
-        <h3>Electrical Subteam Member — Cornell Nexus</h3>
-        <div class="proj-meta">Cornell Nexus Project Team · Sep 2025 – Present</div>
-        <p>Design and integrate electronics for an autonomous robotic system. Contributed to five custom PCBs in Altium spanning power distribution, communication, sensing, and signal processing, coordinating requirements with mechanical and software subteams and supporting board bring-up and debugging.</p>
-        <div class="proj-tags">
-          <span class="proj-tag blue">Altium Designer</span>
-          <span class="proj-tag blue">PCB Design</span>
-          <span class="proj-tag">Schematic Capture</span>
-          <span class="proj-tag">Embedded Systems</span>
-        </div>
-      </div>
-      <div class="proj-links"></div>
-    </div>
-    <div class="proj">
-      <span class="proj-num">03</span>
-      <div class="proj-body">
-        <h3>Apprentice Electrician</h3>
-        <div class="proj-meta">Lewisboro Electrical Services · Jun 2020 – Present</div>
-        <p>Installed, upgraded, and troubleshot residential and commercial electrical systems for more than five years. Read drawings, followed NEC and local code, coordinated with general contractors and other trades, and programmed Lutron HomeWorks and RadioRA 3 automation systems using Designer Pro.</p>
-        <div class="proj-tags">
-          <span class="proj-tag">Electrical Construction</span>
-          <span class="proj-tag">NEC Code</span>
-          <span class="proj-tag">Lutron Automation</span>
-          <span class="proj-tag">Troubleshooting</span>
-        </div>
-      </div>
-      <div class="proj-links"></div>
-    </div>
-  </div>
-</section>
+    </main>
 
-<section id="projects" class="section">
-  <div class="sec-label">projects</div>
-  <h2>Selected Work</h2>
-  <div class="proj-list">
-    <div class="proj">
-      <span class="proj-num">01</span>
-      <div class="proj-body">
-        <h3>Direct-Mapped Cache RTL Design</h3>
-        <div class="proj-meta">Digital Hardware · Computer Architecture · SystemVerilog</div>
-        <p>A direct-mapped cache in SystemVerilog combining a combinational tag-comparison path for single-cycle hits with a finite-state machine that handles misses, memory requests, line refills, and metadata updates under a wait-based memory handshake. Verified with directed testbenches covering hits, misses, refills, and replacement.</p>
-        <div class="proj-tags">
-          <span class="proj-tag blue">SystemVerilog</span>
-          <span class="proj-tag blue">Cache Design</span>
-          <span class="proj-tag blue">FSM</span>
-          <span class="proj-tag">Verification</span>
-        </div>
-      </div>
-      <div class="proj-links"></div>
-    </div>
-    <div class="proj">
-      <span class="proj-num">02</span>
-      <div class="proj-body">
-        <h3>OFDM Audio Communication System</h3>
-        <div class="proj-meta">Digital Communications · Signal Processing · Python</div>
-        <p>An end-to-end OFDM modem transmitting digital data through speakers and microphones at approximately 70 kbps. The transmitter maps data into Gray-coded QAM symbols with adaptive per-subcarrier bit loading; the receiver handles frame synchronization, clock-skew correction, channel estimation, and equalization.</p>
-        <div class="proj-tags">
-          <span class="proj-tag blue">OFDM</span>
-          <span class="proj-tag blue">Python</span>
-          <span class="proj-tag">QAM</span>
-          <span class="proj-tag">Signal Processing</span>
-        </div>
-      </div>
-      <div class="proj-links"></div>
-    </div>
-    <div class="proj">
-      <span class="proj-num">03</span>
-      <div class="proj-body">
-        <h3>Multi-Label Digit Classification</h3>
-        <div class="proj-meta">Machine Learning · Computer Vision · Python</div>
-        <p>A dual-output image-classification system that identifies two overlaid handwritten digits per image. Trained and compared CNNs, SVMs, and baseline approaches with data augmentation, cross-validation, and error analysis, reaching approximately 97% test accuracy.</p>
-        <div class="proj-tags">
-          <span class="proj-tag blue">PyTorch</span>
-          <span class="proj-tag blue">CNN</span>
-          <span class="proj-tag">scikit-learn</span>
-          <span class="proj-tag">Computer Vision</span>
-        </div>
-      </div>
-      <div class="proj-links"></div>
-    </div>
-    <div class="proj">
-      <span class="proj-num">04</span>
-      <div class="proj-body">
-        <h3>Study Partner Matching App</h3>
-        <div class="proj-meta">Full-Stack Software · Android · Backend Development</div>
-        <p>A full-stack Android application that matches students with compatible study partners using schedule availability, course overlap, and study preferences. Built the backend data structures and API workflow, storing user profiles and schedules in a relational database and returning matches to the Android front end.</p>
-        <div class="proj-tags">
-          <span class="proj-tag blue">Android</span>
-          <span class="proj-tag blue">REST API</span>
-          <span class="proj-tag">SQL</span>
-          <span class="proj-tag">Backend</span>
-        </div>
-      </div>
-      <div class="proj-links"></div>
-    </div>
-  </div>
-</section>
-
-<section id="skills" class="section">
-  <div class="sec-label">skills</div>
-  <h2>Tech Stack</h2>
-  <div class="skills-row">
-    <div class="skill-col">
-      <div class="skill-col-label">HDL &amp; Digital Design</div>
-      <span class="sk">SystemVerilog / Verilog</span>
-      <span class="sk">RTL Design</span>
-      <span class="sk">Testbench Development</span>
-      <span class="sk">Waveform Debugging</span>
-      <span class="sk">Intel Quartus</span>
-      <span class="sk">Verilator / IVerilog</span>
-    </div>
-    <div class="skill-col">
-      <div class="skill-col-label">Programming &amp; Data</div>
-      <span class="sk">Python</span>
-      <span class="sk">C++ / Java</span>
-      <span class="sk">MATLAB</span>
-      <span class="sk">SQL</span>
-      <span class="sk">PyTorch / scikit-learn</span>
-      <span class="sk">NumPy / pandas</span>
-    </div>
-    <div class="skill-col">
-      <div class="skill-col-label">Hardware &amp; PCB</div>
-      <span class="sk">Altium Designer</span>
-      <span class="sk">Embedded Systems</span>
-      <span class="sk">Schematic Capture</span>
-      <span class="sk">Sensor Integration</span>
-      <span class="sk">Electrical Troubleshooting</span>
-    </div>
-    <div class="skill-col">
-      <div class="skill-col-label">Engineering Tools</div>
-      <span class="sk">Linux / Git</span>
-      <span class="sk">Fusion 360</span>
-      <span class="sk">SolidWorks</span>
-      <span class="sk">Surfer</span>
-    </div>
-  </div>
-</section>
-
-<section id="interests" class="section">
-  <div class="sec-label">beyond engineering</div>
-  <h2>Outside the Lab</h2>
-  <p class="sec-intro">Many of the habits I bring to technical work come from the outdoors and hands-on hobbies — patience, self-reliance, and a lot of iteration.</p>
-  <div class="interest-grid">
-    <div class="interest-item">
-      <div class="interest-title">Backpacking &amp; Camping</div>
-      <p class="interest-desc">Multi-day trips that require route planning, gear selection, and adapting to changing conditions.</p>
-    </div>
-    <div class="interest-item">
-      <div class="interest-title">Rock Climbing</div>
-      <p class="interest-desc">Technical movement and risk management. I climb personally and teach beginners through Cornell Outdoor Education.</p>
-    </div>
-    <div class="interest-item">
-      <div class="interest-title">Skiing</div>
-      <p class="interest-desc">A favorite way to spend winter — terrain awareness, technical improvement, and exploration.</p>
-    </div>
-    <div class="interest-item">
-      <div class="interest-title">Slacklining</div>
-      <p class="interest-desc">Balance, focus, and incremental improvement — a useful contrast to long stretches of technical work.</p>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="section">
-  <div class="sec-label">contact</div>
-  <h2>Let's build something.</h2>
-  <p class="sec-intro">I'm interested in full-time opportunities involving FPGA development, RTL design, embedded systems, computer architecture, PCB design, and hardware verification.</p>
-  <div class="contact-row">
-    <a href="mailto:sdh228@cornell.edu" class="cl">sdh228@cornell.edu<span class="cl-arrow">→</span></a>
-    <a href="https://github.com/sdhadlock" class="cl" target="_blank" rel="noopener">github.com/sdhadlock<span class="cl-arrow">→</span></a>
-    <a href="https://linkedin.com/in/spencer-hadlock" class="cl" target="_blank" rel="noopener">linkedin / spencer-hadlock<span class="cl-arrow">→</span></a>
-    <a href="SpencerHadlockResume.pdf" class="cl" target="_blank">Resume (PDF)<span class="cl-arrow">↓</span></a>
-  </div>
-</section>
-
-<footer>
-  <p>&copy; 2026 Spencer Hadlock</p>
-  <div class="f-status"><div class="dot-sm"></div>online</div>
-</footer>
-
-<script src="script.js"></script>
+    <footer>
+        <p>&copy; 2026 Spencer Hadlock. All rights reserved.</p>
+        <div class="footer-status"><span class="dot-sm"></span>Online</div>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
