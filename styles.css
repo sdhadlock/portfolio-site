@@ -384,6 +384,22 @@ nav .nav-links a:hover {
     color: var(--accent);
 }
 
+.coursework {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+}
+
+.tag-link {
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.tag-link:hover {
+    border-color: rgba(29, 95, 214, 0.25);
+    color: var(--accent-dark);
+    background: rgba(29, 95, 214, 0.06);
+}
+
 .card-link:hover .arrow {
     transform: translateX(4px);
 }
