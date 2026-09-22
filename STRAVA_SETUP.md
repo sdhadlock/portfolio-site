@@ -41,7 +41,23 @@ address bar and copy the value after `code=` (and before `&scope=`).
 
 ## 3. Exchange the code for a refresh token
 
-In your own terminal (not through an AI assistant), run:
+In your own terminal (not through an AI assistant), run one of these.
+
+**PowerShell** (Windows default — `curl` here is aliased to `Invoke-WebRequest`,
+which doesn't take `-X`/`-d`, so use this instead):
+
+```powershell
+$response = Invoke-RestMethod -Uri "https://www.strava.com/oauth/token" -Method Post -Body @{
+    client_id     = "CLIENT_ID"
+    client_secret = "CLIENT_SECRET"
+    code          = "AUTHORIZATION_CODE"
+    grant_type    = "authorization_code"
+}
+$response.refresh_token
+$response.athlete.id
+```
+
+**bash / real curl** (e.g. `curl.exe` explicitly on Windows, or macOS/Linux):
 
 ```bash
 curl -X POST https://www.strava.com/oauth/token \
@@ -51,7 +67,7 @@ curl -X POST https://www.strava.com/oauth/token \
   -d grant_type=authorization_code
 ```
 
-The JSON response includes:
+The response includes:
 - `refresh_token` — you need this
 - `athlete.id` — your numeric Strava athlete ID, also needed
 
