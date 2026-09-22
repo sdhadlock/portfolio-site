@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In-depth write-ups of Spencer Hadlock's engineering projects — RTL cache design, an OFDM communication system, machine learning, and a full-stack Android app.">
+    <title>Projects — Spencer Hadlock</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Spencer Hadlock</a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#education">Education</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-hero">
+            <a href="index.html" class="back-link">← Back to home</a>
+            <h1>Projects</h1>
+            <p>Extended write-ups of a few projects from my portfolio — the problem, technical approach, and what I ran into building each one.</p>
+            <div class="project-jump">
+                <a href="#cache">Cache RTL Design</a>
+                <a href="#ofdm">OFDM Modem</a>
+                <a href="#ml-digits">Digit Classification</a>
+                <a href="#study-app">Study Partner App</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <article id="cache" class="section project-detail">
+                <div class="sec-eyebrow">Digital Hardware · Computer Architecture · SystemVerilog</div>
+                <h2>Direct-Mapped Cache RTL Design</h2>
+                <p>I designed a direct-mapped cache in SystemVerilog with a combinational tag-comparison and hit-detection path for single-cycle cache hits. Cache misses are handled by a finite-state machine that coordinates memory requests, waits for the external memory system, refills the selected cache line, updates metadata, and returns the requested data to the processor.</p>
+                <p>The design uses a wait-based memory-side handshake, requiring the cache controller to remain correct even when memory response latency varies. I verified the design with directed SystemVerilog testbenches covering hits, misses, refills, replacement behavior, processor-facing behavior, and memory-facing behavior, debugging failures by tracing signals through simulation waveforms.</p>
+                <div class="detail-grid">
+                    <div class="detail-col">
+                        <h3>Technical Areas</h3>
+                        <div class="tag-row">
+                            <span class="tag">Direct-Mapped Organization</span>
+                            <span class="tag">Tag / Valid / Data Storage</span>
+                            <span class="tag">Address Decomposition</span>
+                            <span class="tag">Combinational Hit Detection</span>
+                            <span class="tag">FSM Control</span>
+                            <span class="tag">Multi-Cycle Miss Handling</span>
+                            <span class="tag">Memory Handshake Protocol</span>
+                            <span class="tag">Refill &amp; Replacement</span>
+                            <span class="tag">Waveform Debugging</span>
+                        </div>
+                    </div>
+                    <div class="detail-col">
+                        <h3>Key Challenges</h3>
+                        <ul class="detail-list">
+                            <li>Preserving a fast combinational path for hits while managing a multi-cycle miss path</li>
+                            <li>Correctly coordinating state transitions with an external memory wait signal</li>
+                            <li>Ensuring the processor receives valid data at the correct cycle</li>
+                            <li>Separating metadata updates from request and response timing</li>
+                            <li>Testing both normal cases and edge conditions</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <article id="ofdm" class="section project-detail">
+                <div class="sec-eyebrow">Digital Communications · Signal Processing · Python</div>
+                <h2>OFDM Audio Communication System</h2>
+                <p>I built an end-to-end OFDM communication system in Python that transmitted digital data through speakers and microphones over a real acoustic channel. The transmitter maps data into Gray-coded QAM symbols, assigns bits adaptively across OFDM subcarriers based on channel quality, generates time-domain frames, and plays the signal through audio hardware.</p>
+                <p>The receiver detects incoming frames via cross-correlation, corrects for clock-rate mismatch between transmitter and receiver, estimates the acoustic channel, equalizes each subcarrier, demodulates the QAM symbols, and reconstructs the transmitted data.</p>
+                <div class="result-badge">
+                    <span class="result-val">~70 kbps</span>
+                    <span class="result-label">sustained throughput over a real speaker-to-microphone acoustic channel</span>
+                </div>
+                <div class="detail-grid">
+                    <div class="detail-col">
+                        <h3>Technical Areas</h3>
+                        <div class="tag-row">
+                            <span class="tag">OFDM</span>
+                            <span class="tag">QAM Modulation / Demodulation</span>
+                            <span class="tag">Gray-Coded Constellations</span>
+                            <span class="tag">Adaptive Bit Loading</span>
+                            <span class="tag">Frame Synchronization</span>
+                            <span class="tag">Cross-Correlation</span>
+                            <span class="tag">Clock-Skew Correction</span>
+                            <span class="tag">Channel Estimation</span>
+                            <span class="tag">Equalization</span>
+                        </div>
+                    </div>
+                    <div class="detail-col">
+                        <h3>Key Challenges</h3>
+                        <ul class="detail-list">
+                            <li>Real audio channels introduce echoes, frequency-dependent attenuation, noise, and hardware imperfections</li>
+                            <li>Transmitter and receiver clocks don't run at exactly the same rate</li>
+                            <li>Reliable synchronization is required before symbol recovery can begin</li>
+                            <li>Different subcarriers experience different signal quality</li>
+                            <li>The receiver must estimate and compensate for channel distortion in real time</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <article id="ml-digits" class="section project-detail">
+                <div class="sec-eyebrow">Machine Learning · Computer Vision · Python</div>
+                <h2>Multi-Label Digit Classification</h2>
+                <p>I developed a machine-learning system that identifies pairs of overlaid handwritten digits — a harder problem than conventional single-label classification, since the model has to predict both digit classes visible in each image.</p>
+                <p>I trained and compared convolutional neural networks, support vector machines, and simpler baseline approaches, using preprocessing, data augmentation, cross-validation, and error analysis to reduce overfitting and improve generalization from a limited training set.</p>
+                <div class="result-badge">
+                    <span class="result-val">~97%</span>
+                    <span class="result-label">overall test accuracy from the best-performing approach</span>
+                </div>
+                <div class="detail-grid">
+                    <div class="detail-col">
+                        <h3>Technical Areas</h3>
+                        <div class="tag-row">
+                            <span class="tag">Multi-Label Classification</span>
+                            <span class="tag">Convolutional Neural Networks</span>
+                            <span class="tag">Support Vector Machines</span>
+                            <span class="tag">Data Augmentation</span>
+                            <span class="tag">Cross-Validation</span>
+                            <span class="tag">Error Analysis</span>
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">scikit-learn</span>
+                            <span class="tag">NumPy / pandas</span>
+                        </div>
+                    </div>
+                    <div class="detail-col">
+                        <h3>Key Challenges</h3>
+                        <ul class="detail-list">
+                            <li>Two digits may overlap heavily, with one partially obscuring the other</li>
+                            <li>Digit order and label representation had to be handled consistently</li>
+                            <li>Limited training data increased overfitting risk</li>
+                            <li>Some digit combinations were more visually ambiguous than others</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <article id="study-app" class="section project-detail">
+                <div class="sec-eyebrow">Full-Stack Software · Android · Backend Development</div>
+                <h2>Study Partner Matching App</h2>
+                <p>I helped build a full-stack Android application that matches students with compatible study partners. The app collects schedule availability, course overlap, and study preferences, then queries a relational database to return personalized matches.</p>
+                <p>I focused on the backend: data structures and the API workflow, including storing user profiles and schedules, processing partner-search queries, and returning matching results to the Android front end.</p>
+                <div class="detail-grid">
+                    <div class="detail-col">
+                        <h3>Technical Areas</h3>
+                        <div class="tag-row">
+                            <span class="tag">Android Development</span>
+                            <span class="tag">REST API Design</span>
+                            <span class="tag">Relational Databases</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">Schedule Representation</span>
+                            <span class="tag">Search &amp; Matching Logic</span>
+                        </div>
+                    </div>
+                    <div class="detail-col">
+                        <h3>Key Challenges</h3>
+                        <ul class="detail-list">
+                            <li>Representing schedules in a form that can be searched efficiently</li>
+                            <li>Combining hard constraints, like availability, with softer preferences</li>
+                            <li>Structuring relational data across users, courses, and schedules</li>
+                            <li>Designing API endpoints that return useful information to the front end</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <section class="section join-section">
+                <h2>Want the full picture?</h2>
+                <p class="section-intro">See education, experience, and how to get in touch back on the main page.</p>
+                <div class="contact-row">
+                    <a href="index.html#experience" class="contact-link">Experience<span class="arrow">→</span></a>
+                    <a href="index.html#skills" class="contact-link">Skills<span class="arrow">→</span></a>
+                    <a href="index.html#contact" class="contact-link">Contact<span class="arrow">→</span></a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Spencer Hadlock. All rights reserved.</p>
+        <div class="footer-status"><span class="dot-sm"></span>Online</div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

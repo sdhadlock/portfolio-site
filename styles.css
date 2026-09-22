@@ -142,6 +142,18 @@ nav .nav-links a:hover {
     flex-shrink: 0;
 }
 
+.hero-photo {
+    display: block;
+    width: 128px;
+    height: 128px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 15%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 1px var(--line);
+}
+
 .hero h1 {
     font-size: 3.25rem;
     font-weight: 800;
@@ -362,6 +374,20 @@ nav .nav-links a:hover {
     background: rgba(29, 95, 214, 0.06);
 }
 
+.card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 1.25rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.card-link:hover .arrow {
+    transform: translateX(4px);
+}
+
 /* ---------- Contact ---------- */
 .join-section {
     background: var(--panel);
@@ -432,6 +458,145 @@ footer p {
 
 .footer-status .dot-sm {
     background: #4ade80;
+}
+
+/* ---------- Sub-page Hero (Projects) ---------- */
+.page-hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3.5rem 2rem 3rem;
+    text-align: center;
+}
+
+.back-link {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--faint);
+    margin-bottom: 1.5rem;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: var(--accent);
+}
+
+.page-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.page-hero p {
+    font-size: 1.05rem;
+    max-width: 620px;
+    margin: 0 auto;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.project-jump {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 2rem;
+}
+
+.project-jump a {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--muted);
+    transition: all 0.2s;
+}
+
+.project-jump a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* ---------- Project Detail ---------- */
+.sec-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+}
+
+.project-detail h2 {
+    margin-bottom: 1.25rem;
+}
+
+.project-detail > p {
+    max-width: 75ch;
+}
+
+.result-badge {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+}
+
+.result-val {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.result-label {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    margin-top: 1.75rem;
+}
+
+.detail-col h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.detail-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.detail-list li {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+    padding-left: 1.1rem;
+    position: relative;
+}
+
+.detail-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
 }
 
 /* ---------- Responsive ---------- */
@@ -505,6 +670,24 @@ footer p {
 
     .join-section {
         padding: 2rem 1.5rem;
+    }
+
+    .page-hero {
+        padding: 3rem 1.5rem 2.5rem;
+    }
+
+    .page-hero h1 {
+        font-size: 2rem;
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+    }
+
+    .result-badge {
+        flex-direction: column;
+        gap: 0.35rem;
     }
 
     footer {

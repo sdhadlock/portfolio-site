@@ -182,6 +182,15 @@ Pill-shaped, `panel` background with `line` border by default; an accent variant
 - Links are `muted` at rest, accent blue on hover, no underline.
 - Mobile: hamburger reveals a clipped-in dropdown, white background, hairline divider per link.
 
+### Avatar (hero photo)
+`.hero-photo`: a 128px circular headshot centered above the hero badge — `object-fit: cover`, thin white border plus a 1px hairline ring (`box-shadow: 0 0 0 1px var(--line)`) instead of a heavy frame, keeping it consistent with the rest of the flat, hairline-bordered system.
+
+### Sub-page Hero (`.page-hero`)
+A lighter version of the main hero for secondary pages like `projects.html`: centered title + one-line intro, no stats/buttons, plus a `.back-link` above the title and an optional `.project-jump` pill row below it for in-page navigation to each detail section.
+
+### Project Detail (`projects.html`)
+Each project is an `<article class="section project-detail">` with a `.sec-eyebrow` (small accent category label, same style as `.card-meta`) above the `<h2>`, full-width body paragraphs, an optional `.result-badge` (large accent number + label, for a headline metric like "~70 kbps" or "~97%"), and a two-column `.detail-grid` pairing a tag-row "Technical Areas" column with a bulleted `.detail-list` "Key Challenges" column. Collapses to one column under 900px.
+
 ## Do's and Don'ts
 
 ### Do:
