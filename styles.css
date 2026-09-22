@@ -383,7 +383,7 @@ nav .nav-links a:hover {
     align-items: center;
     padding: 1rem 0;
     border-bottom: 1px solid var(--line);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 500;
     transition: color 0.2s;
 }
