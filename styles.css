@@ -80,7 +80,7 @@ nav .nav-links {
 }
 
 nav .nav-links a {
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     font-weight: 500;
     color: var(--muted);
     transition: color 0.2s;
@@ -183,7 +183,7 @@ nav .nav-links a:hover {
     background: transparent;
     padding: 0.8rem 1.6rem;
     border-radius: 8px;
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     font-weight: 600;
     transition: all 0.2s;
 }
@@ -343,7 +343,7 @@ nav .nav-links a:hover {
 
 .card p {
     color: var(--muted);
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     line-height: 1.7;
     margin-bottom: 1rem;
 }
@@ -379,7 +379,7 @@ nav .nav-links a:hover {
     align-items: center;
     gap: 0.35rem;
     margin-top: 1.25rem;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 600;
     color: var(--accent);
 }
@@ -470,7 +470,7 @@ footer p {
 
 .back-link {
     display: inline-block;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 600;
     color: var(--faint);
     margin-bottom: 1.5rem;
@@ -489,7 +489,7 @@ footer p {
 }
 
 .page-hero p {
-    font-size: 1.05rem;
+    font-size: 1rem;
     max-width: 620px;
     margin: 0 auto;
     color: var(--muted);
@@ -547,7 +547,7 @@ footer p {
 }
 
 .result-val {
-    font-size: 1.75rem;
+    font-size: 2rem;
     font-weight: 800;
     color: var(--accent);
     line-height: 1;
@@ -555,7 +555,7 @@ footer p {
 }
 
 .result-label {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     color: var(--muted);
     line-height: 1.5;
 }
@@ -581,7 +581,7 @@ footer p {
 }
 
 .detail-list li {
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     color: var(--muted);
     line-height: 1.6;
     padding-left: 1.1rem;

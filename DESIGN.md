@@ -30,6 +30,12 @@ typography:
     fontSizeMobile: "1.6rem"
     fontWeight: 700
     lineHeight: 1.2
+  pageTitle:
+    fontFamily: "{typography.fontStack}"
+    fontSize: "2.5rem"
+    fontSizeMobile: "2rem"
+    fontWeight: 800
+    lineHeight: 1.1
   title:
     fontFamily: "{typography.fontStack}"
     fontSize: "1.15rem"
@@ -135,12 +141,13 @@ A near-monochrome light palette with exactly one accent color.
 **Font:** System UI sans-serif stack (`-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', ...`) — no webfont loads, by design, to keep the page simple and fast.
 
 ### Hierarchy
-- **Hero** (800, `3.25rem`, line-height 1.1): the name in the hero.
-- **Headline** (700, `2rem`): section `<h2>` titles.
+- **Hero** (800, `3.25rem`, mobile `2.4rem`, line-height 1.1): the name in the main hero.
+- **Page title** (800, `2.5rem`, mobile `2rem`, line-height 1.1): `<h1>` on secondary pages (`.page-hero`, e.g. `projects.html`) — a step down from the full hero, a step up from a section headline.
+- **Headline** (700, `2rem`, mobile `1.6rem`): section `<h2>` titles.
 - **Title** (700, `1.15rem`): card titles (project/school/role names).
-- **Meta** (600, `0.8rem`, accent blue): the line under a card title (dates, category, employer).
+- **Meta** (600, `0.8rem`–`0.82rem`, accent blue or faint): the line under a card title (dates, category, employer), plus small nav-adjacent labels (back-link, card-link, project-jump pills, result-label).
 - **Body** (400, `1rem`, line-height 1.75): section intro/about paragraphs.
-- **Body small** (400, `0.92rem`, line-height 1.7): card paragraph copy.
+- **Body small** (400, `0.9rem`, line-height 1.6–1.7): nav links, buttons, card paragraph copy, fact rows, contact links, project detail-list items.
 - **Tag** (400, `0.75rem`): pill labels for skills/tech/tools.
 
 ## Layout
@@ -186,10 +193,10 @@ Pill-shaped, `panel` background with `line` border by default; an accent variant
 `.hero-photo`: a 128px circular headshot centered above the hero badge — `object-fit: cover`, thin white border plus a 1px hairline ring (`box-shadow: 0 0 0 1px var(--line)`) instead of a heavy frame, keeping it consistent with the rest of the flat, hairline-bordered system.
 
 ### Sub-page Hero (`.page-hero`)
-A lighter version of the main hero for secondary pages like `projects.html`: centered title + one-line intro, no stats/buttons, plus a `.back-link` above the title and an optional `.project-jump` pill row below it for in-page navigation to each detail section.
+A lighter version of the main hero for secondary pages like `projects.html`: centered **page title** type (`2.5rem`, see Hierarchy) + one-line intro, no stats/buttons, plus a `.back-link` above the title and an optional `.project-jump` pill row below it for in-page navigation to each detail section.
 
 ### Project Detail (`projects.html`)
-Each project is an `<article class="section project-detail">` with a `.sec-eyebrow` (small accent category label, same style as `.card-meta`) above the `<h2>`, full-width body paragraphs, an optional `.result-badge` (large accent number + label, for a headline metric like "~70 kbps" or "~97%"), and a two-column `.detail-grid` pairing a tag-row "Technical Areas" column with a bulleted `.detail-list` "Key Challenges" column. Collapses to one column under 900px.
+Each project is an `<article class="section project-detail">` with a `.sec-eyebrow` (small accent category label, same style as `.card-meta`) above the `<h2>`, full-width body paragraphs, an optional `.result-badge` (a headline metric like "~70 kbps" or "~97%", using the same `2rem` accent-number style as the homepage's `.stat-val` so "big number" treatment stays consistent site-wide), and a two-column `.detail-grid` pairing a tag-row "Technical Areas" column with a bulleted `.detail-list` "Key Challenges" column. Collapses to one column under 900px.
 
 ## Do's and Don'ts
 
