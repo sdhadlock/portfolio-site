@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spencer Hadlock — Green Terminal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --void: #020304;
+      --surface: #0A0E10;
+      --panel: #0D1317;
+      --green: #00FF85;
+      --green-dim: rgba(0,255,133,0.45);
+      --green-glow: rgba(0,255,133,0.07);
+      --text: #C8D8CC;
+      --muted: #4A5E54;
+      --border: rgba(0,255,133,0.1);
+    }
+
+    html { font-size: 16px; }
+    body {
+      background: var(--void);
+      color: var(--text);
+      font-family: 'JetBrains Mono', monospace;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.025) 2px, rgba(0,0,0,0.025) 4px);
+    }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      padding: 1rem 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { color: var(--green); font-size: 0.85rem; font-weight: 700; text-decoration: none; }
+    .nav-logo span { color: var(--muted); font-weight: 400; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--muted); text-decoration: none; font-size: 0.75rem;
+      transition: color 0.2s;
+    }
+    .nav-links a::before { content: './'; color: var(--green-dim); }
+    .nav-links a:hover { color: var(--green); }
+    .nav-status { display: flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; color: var(--green); }
+    .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: blink 2s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    /* HERO */
+    .hero {
+      min-height: calc(100vh - 57px);
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3rem; align-items: center;
+      padding: 4rem 2.5rem;
+    }
+    .prompt-line { display: flex; gap: 0.6rem; align-items: baseline; margin-bottom: 1.5rem; font-size: 0.8rem; }
+    .ps1 { color: var(--green-dim); }
+    .cmd { color: var(--text); }
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      font-weight: 700; line-height: 0.95; letter-spacing: -0.03em;
+      color: #E8FAF0; margin-bottom: 1rem;
+    }
+    h1 .accent { color: var(--green); }
+    .hero-sub { color: var(--muted); font-size: 0.82rem; max-width: 42ch; line-height: 1.85; margin-bottom: 2.5rem; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem; }
+    .hero-tag {
+      border: 1px solid var(--border); color: var(--green);
+      padding: 0.2rem 0.6rem; font-size: 0.65rem;
+    }
+    .btn-row { display: flex; gap: 0.75rem; }
+    .btn {
+      border: 1px solid var(--green); color: var(--green); background: transparent;
+      padding: 0.8rem 1.6rem; font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+      text-decoration: none; cursor: pointer; transition: background 0.2s;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+    }
+    .btn::before { content: '> '; color: var(--green-dim); }
+    .btn:hover { background: var(--green-glow); }
+    .btn.fill { background: var(--green); color: var(--void); font-weight: 700; }
+    .btn.fill::before { display: none; }
+    .btn.fill:hover { background: rgba(0,255,133,0.85); }
+
+    /* TERMINAL WINDOW */
+    .term {
+      background: var(--panel); border: 1px solid var(--border);
+      display: flex; flex-direction: column;
+    }
+    .term-bar {
+      padding: 0.65rem 1rem; background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .tb { width: 10px; height: 10px; border-radius: 50%; }
+    .term-title { margin-left: auto; font-size: 0.65rem; color: var(--muted); }
+    .term-body { padding: 1.25rem; font-size: 0.78rem; }
+    .tl { display: flex; gap: 0.6rem; margin-bottom: 0.6rem; }
+    .tp { color: var(--green-dim); flex-shrink: 0; }
+    .tc { color: var(--text); }
+    .to { color: var(--muted); padding-left: 0.8rem; margin-bottom: 0.75rem; font-size: 0.72rem; line-height: 1.7; }
+    .ts { color: var(--green); }
+    .tw { color: #FFB800; }
+    .cursor { display: inline-block; width: 7px; height: 0.9em; background: var(--green); vertical-align: text-bottom; animation: cur 1s step-end infinite; }
+    @keyframes cur { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    /* DIVIDER */
+    .ticker {
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      background: var(--surface); padding: 0.7rem 0; overflow: hidden;
+    }
+    .ticker-inner { display: flex; gap: 3rem; animation: tick 18s linear infinite; white-space: nowrap; }
+    @keyframes tick { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    .ti { font-size: 0.68rem; display: flex; gap: 0.6rem; }
+    .tk { color: var(--green); font-weight: 700; }
+    .tv { color: var(--text); }
+
+    /* SECTIONS */
+    .section { padding: 4.5rem 2.5rem; border-top: 1px solid var(--border); }
+    .sec-tag { font-size: 0.65rem; color: var(--green); letter-spacing: 0.2em; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+    .sec-tag::before { content: '##'; color: var(--green-dim); }
+    h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 700; letter-spacing: -0.025em; color: #E8FAF0; margin-bottom: 2.5rem; line-height: 1.1;
+    }
+
+    /* PROJECTS */
+    .proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--border); }
+    .proj {
+      background: var(--panel); padding: 2rem;
+      border: none; transition: background 0.2s;
+    }
+    .proj:hover { background: #111B1F; }
+    .proj-num { font-size: 0.65rem; color: var(--muted); margin-bottom: 1rem; }
+    .proj h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 700; color: #E8FAF0; margin-bottom: 0.75rem; letter-spacing: -0.01em; }
+    .proj p { font-size: 0.75rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.25rem; }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem; }
+    .proj-tag { border: 1px solid var(--border); color: var(--green); padding: 0.15rem 0.5rem; font-size: 0.6rem; }
+    .proj-links { display: flex; gap: 1rem; }
+    .proj-link { color: var(--muted); font-size: 0.72rem; text-decoration: none; transition: color 0.2s; }
+    .proj-link:hover { color: var(--green); }
+    .proj-link::after { content: ' →'; }
+
+    /* SKILLS */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: var(--border); }
+    .skill-group { background: var(--panel); padding: 2rem; }
+    .skill-group h3 { font-size: 0.7rem; color: var(--green); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.25rem; }
+    .skill-list { display: flex; flex-direction: column; gap: 0.5rem; }
+    .skill-item { font-size: 0.78rem; color: var(--muted); display: flex; align-items: center; gap: 0.5rem; }
+    .skill-item::before { content: '-'; color: var(--green-dim); }
+
+    /* CONTACT */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .contact-intro p { color: var(--muted); font-size: 0.82rem; line-height: 1.85; margin-bottom: 1.5rem; }
+    .contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
+    .contact-link {
+      display: flex; align-items: center; gap: 1rem;
+      border: 1px solid var(--border); padding: 1rem 1.25rem;
+      color: var(--text); text-decoration: none; font-size: 0.78rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .contact-link:hover { border-color: var(--green); color: var(--green); }
+    .cl-label { color: var(--green-dim); font-size: 0.65rem; min-width: 4rem; }
+
+    footer {
+      padding: 1.5rem 2.5rem; border-top: 1px solid var(--border); background: var(--surface);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    footer p { font-size: 0.7rem; color: var(--muted); }
+    .footer-status { display: flex; align-items: center; gap: 0.4rem; font-size: 0.7rem; color: var(--green); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">spencer<span>@hadlock</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">about</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#skills">skills</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+  <div class="nav-status"><div class="dot"></div>available for work</div>
+</nav>
+
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ti"><span class="tk">ECE</span><span class="tv">Cornell University</span></span>
+    <span class="ti"><span class="tk">FPGA</span><span class="tv">Verilog · VHDL</span></span>
+    <span class="ti"><span class="tk">RISC-V</span><span class="tv">ISA Design</span></span>
+    <span class="ti"><span class="tk">STATUS</span><span class="tv">Open to opportunities</span></span>
+    <span class="ti"><span class="tk">LANG</span><span class="tv">C++ · Python · SystemVerilog</span></span>
+    <span class="ti"><span class="tk">ECE</span><span class="tv">Cornell University</span></span>
+    <span class="ti"><span class="tk">FPGA</span><span class="tv">Verilog · VHDL</span></span>
+    <span class="ti"><span class="tk">RISC-V</span><span class="tv">ISA Design</span></span>
+    <span class="ti"><span class="tk">STATUS</span><span class="tv">Open to opportunities</span></span>
+    <span class="ti"><span class="tk">LANG</span><span class="tv">C++ · Python · SystemVerilog</span></span>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="prompt-line"><span class="ps1">spencer@cornell:~$</span><span class="cmd">whoami</span></div>
+    <h1>Spencer<br><span class="accent">Hadlock.</span></h1>
+    <p class="hero-sub">
+      // ECE @ Cornell University<br>
+      // FPGA engineer · systems builder · low-latency obsessed<br>
+      // Building hardware that operates at the limits of physics.
+    </p>
+    <div class="hero-tags">
+      <span class="hero-tag">Verilog</span>
+      <span class="hero-tag">FPGA</span>
+      <span class="hero-tag">RISC-V</span>
+      <span class="hero-tag">C++</span>
+      <span class="hero-tag">Python</span>
+      <span class="hero-tag">Embedded</span>
+    </div>
+    <div class="btn-row">
+      <a href="#projects" class="btn fill">view_work()</a>
+      <a href="#contact" class="btn">get_in_touch()</a>
+    </div>
+  </div>
+  <div class="term">
+    <div class="term-bar">
+      <div class="tb" style="background:#FF5F57"></div>
+      <div class="tb" style="background:#FFBD2E"></div>
+      <div class="tb" style="background:#28CA41"></div>
+      <span class="term-title">spencer@cornell — zsh</span>
+    </div>
+    <div class="term-body">
+      <div class="tl"><span class="tp">~$</span><span class="tc">cat profile.json</span></div>
+      <div class="to">
+        <div>{</div>
+        <div>&nbsp;&nbsp;"name": <span class="ts">"Spencer Hadlock"</span>,</div>
+        <div>&nbsp;&nbsp;"school": <span class="ts">"Cornell University"</span>,</div>
+        <div>&nbsp;&nbsp;"major": <span class="ts">"Electrical & Computer Engineering"</span>,</div>
+        <div>&nbsp;&nbsp;"focus": [<span class="ts">"FPGA"</span>, <span class="ts">"Systems"</span>, <span class="ts">"HW Design"</span>],</div>
+        <div>&nbsp;&nbsp;"status": <span class="ts">"open_to_opportunities"</span></div>
+        <div>}</div>
+      </div>
+      <div class="tl"><span class="tp">~$</span><span class="tc">./run_latest_project.sh</span></div>
+      <div class="to">
+        <div><span class="ts">✓</span> Loading RISC-V processor bitstream...</div>
+        <div><span class="ts">✓</span> Simulation complete (500MHz target)</div>
+        <div><span class="ts">✓</span> All 47 test cases passed</div>
+        <div><span class="tw">⚠</span> CPI: 1.0 (single-cycle, expected)</div>
+      </div>
+      <div class="tl"><span class="tp">~$</span><span class="tc"><span class="cursor"></span></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="sec-tag">about</div>
+  <h2>About Me</h2>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem;">
+    <div>
+      <p style="color:var(--muted);font-size:0.82rem;line-height:1.9;margin-bottom:1rem;">I'm Spencer — an Electrical and Computer Engineering student at Cornell University with a deep focus on hardware design, FPGA development, and low-latency systems. I love building things that sit close to the metal.</p>
+      <p style="color:var(--muted);font-size:0.82rem;line-height:1.9;">Whether it's designing a processor from scratch in Verilog, writing embedded firmware, or exploring the intersection of hardware and quantitative systems, I'm drawn to problems where performance is measured in nanoseconds.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);align-content:start;">
+      <div style="background:var(--panel);padding:1.5rem;">
+        <div style="font-size:2rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--green);line-height:1;">3+</div>
+        <div style="font-size:0.65rem;color:var(--muted);margin-top:0.25rem;">years ECE</div>
+      </div>
+      <div style="background:var(--panel);padding:1.5rem;">
+        <div style="font-size:2rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--green);line-height:1;">10+</div>
+        <div style="font-size:0.65rem;color:var(--muted);margin-top:0.25rem;">projects built</div>
+      </div>
+      <div style="background:var(--panel);padding:1.5rem;">
+        <div style="font-size:2rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--green);line-height:1;">ns</div>
+        <div style="font-size:0.65rem;color:var(--muted);margin-top:0.25rem;">target latency</div>
+      </div>
+      <div style="background:var(--panel);padding:1.5rem;">
+        <div style="font-size:2rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--green);line-height:1;">∞</div>
+        <div style="font-size:0.65rem;color:var(--muted);margin-top:0.25rem;">curiosity</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <div class="sec-tag">projects</div>
+  <h2>What I've Built</h2>
+  <div class="proj-grid">
+    <div class="proj">
+      <div class="proj-num">// 01</div>
+      <h3>RISC-V Single Cycle Processor</h3>
+      <p>Designed and implemented a fully functional single-cycle processor in Verilog executing the RISC-V ISA. Simulated and tested on FPGA hardware with custom assembly programs.</p>
+      <div class="proj-tags">
+        <span class="proj-tag">Verilog</span>
+        <span class="proj-tag">FPGA</span>
+        <span class="proj-tag">RISC-V</span>
+        <span class="proj-tag">Assembly</span>
+      </div>
+      <div class="proj-links">
+        <a href="#" class="proj-link">Details</a>
+        <a href="#" class="proj-link">GitHub</a>
+      </div>
+    </div>
+    <div class="proj">
+      <div class="proj-num">// 02</div>
+      <h3>Project 2</h3>
+      <p>Description coming soon.</p>
+      <div class="proj-tags">
+        <span class="proj-tag">TBD</span>
+      </div>
+    </div>
+    <div class="proj">
+      <div class="proj-num">// 03</div>
+      <h3>Project 3</h3>
+      <p>Description coming soon.</p>
+      <div class="proj-tags">
+        <span class="proj-tag">TBD</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="section">
+  <div class="sec-tag">skills</div>
+  <h2>Tech Stack</h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <h3>Hardware</h3>
+      <div class="skill-list">
+        <span class="skill-item">Verilog / VHDL</span>
+        <span class="skill-item">FPGA (Xilinx)</span>
+        <span class="skill-item">SystemVerilog</span>
+        <span class="skill-item">HLS</span>
+        <span class="skill-item">Circuit Design</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>Software</h3>
+      <div class="skill-list">
+        <span class="skill-item">C / C++</span>
+        <span class="skill-item">Python</span>
+        <span class="skill-item">Assembly (RISC-V)</span>
+        <span class="skill-item">Linux / Bash</span>
+        <span class="skill-item">Git</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>Tools</h3>
+      <div class="skill-list">
+        <span class="skill-item">Vivado / Quartus</span>
+        <span class="skill-item">ModelSim</span>
+        <span class="skill-item">GTKWave</span>
+        <span class="skill-item">Multisim</span>
+        <span class="skill-item">LTspice</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="sec-tag">contact</div>
+  <h2>Get In Touch</h2>
+  <div class="contact-grid">
+    <div class="contact-intro">
+      <p>I'm always open to discussing new projects, internship opportunities, research, or anything at the intersection of hardware and software. Reach out — I don't bite.</p>
+      <p>Currently based in Ithaca, NY. Open to remote and on-site roles.</p>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:sdh228@cornell.edu" class="contact-link">
+        <span class="cl-label">email://</span>
+        sdh228@cornell.edu
+      </a>
+      <a href="https://github.com/sdhadlock" class="contact-link">
+        <span class="cl-label">github://</span>
+        sdhadlock
+      </a>
+      <a href="https://linkedin.com/in/spencer-hadlock" class="contact-link">
+        <span class="cl-label">linkedin://</span>
+        spencer-hadlock
+      </a>
+      <a href="../SpencerHadlockResume.pdf" class="contact-link">
+        <span class="cl-label">resume://</span>
+        SpencerHadlockResume.pdf
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>spencer@hadlock:~$ echo "© 2025 Spencer Hadlock"</p>
+  <div class="footer-status"><div class="dot"></div>online</div>
+</footer>
+
+</body>
+</html>

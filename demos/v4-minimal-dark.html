@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spencer Hadlock — Minimal Dark</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0D0D0D;
+      --surface: #141414;
+      --panel: #181818;
+      --white: #F5F5F5;
+      --mid: #666;
+      --muted: #333;
+      --accent: #00FF85;
+      --border: rgba(255,255,255,0.06);
+    }
+
+    html { font-size: 16px; }
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'JetBrains Mono', monospace;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      padding: 1.25rem 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--bg); border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-size: 0.85rem; font-weight: 700; color: var(--white); text-decoration: none; letter-spacing: -0.01em; }
+    .nav-logo .dot { color: var(--accent); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { color: var(--mid); text-decoration: none; font-size: 0.75rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-avail { font-size: 0.7rem; color: var(--accent); display: flex; align-items: center; gap: 0.4rem; }
+    .dot-sm { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+
+    /* HERO — very spacious, typographic focus */
+    .hero {
+      min-height: calc(100vh - 57px);
+      padding: 6rem 3rem 4rem;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .hero-top { max-width: 900px; }
+    .hero-label {
+      font-size: 0.7rem; color: var(--mid); letter-spacing: 0.12em;
+      margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.75rem;
+    }
+    .hero-label::before { content: ''; display: block; width: 1.5rem; height: 1px; background: var(--muted); }
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(4rem, 9vw, 8.5rem);
+      font-weight: 700; line-height: 0.9; letter-spacing: -0.04em;
+      margin-bottom: 2.5rem;
+    }
+    h1 .line2 { color: var(--mid); }
+    h1 .accent { color: var(--accent); }
+    .hero-desc { font-size: 0.85rem; color: var(--mid); max-width: 50ch; line-height: 1.85; }
+    .hero-bottom {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      padding-top: 4rem; border-top: 1px solid var(--border);
+    }
+    .hero-ctas { display: flex; gap: 1rem; }
+    .btn {
+      border: 1px solid var(--border); color: var(--mid); background: transparent;
+      padding: 0.85rem 1.75rem; font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .btn:hover { border-color: var(--white); color: var(--white); }
+    .btn.accent { border-color: var(--accent); color: var(--accent); }
+    .btn.accent:hover { background: var(--accent); color: var(--bg); }
+    .hero-scroll { font-size: 0.65rem; color: var(--muted); letter-spacing: 0.15em; }
+
+    /* STATS — single clean row */
+    .stats-strip {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    }
+    .stat { padding: 2rem 3rem; border-right: 1px solid var(--border); }
+    .stat:last-child { border-right: none; }
+    .stat-val {
+      font-family: 'Space Grotesk', sans-serif; font-size: 2.25rem; font-weight: 700;
+      color: var(--white); line-height: 1; margin-bottom: 0.35rem; letter-spacing: -0.02em;
+    }
+    .stat-val .a { color: var(--accent); }
+    .stat-label { font-size: 0.62rem; color: var(--mid); }
+
+    /* SECTIONS */
+    .section { padding: 5rem 3rem; border-top: 1px solid var(--border); }
+    .section-label { font-size: 0.62rem; color: var(--mid); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.25rem; }
+    h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.75rem,3.5vw,3rem); font-weight: 700; letter-spacing: -0.025em; color: var(--white); margin-bottom: 3rem; line-height: 1.05; }
+
+    /* PROJECTS — list style */
+    .proj-list { display: flex; flex-direction: column; }
+    .proj {
+      display: grid; grid-template-columns: 3rem 1fr auto;
+      gap: 2rem; align-items: start;
+      padding: 2.5rem 0; border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+    .proj:first-child { border-top: 1px solid var(--border); }
+    .proj-num { font-size: 0.65rem; color: var(--muted); padding-top: 0.3rem; }
+    .proj-body h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 0.6rem; letter-spacing: -0.015em; }
+    .proj-body p { font-size: 0.78rem; color: var(--mid); line-height: 1.8; margin-bottom: 1rem; max-width: 55ch; }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .proj-tag { border: 1px solid var(--border); color: var(--mid); padding: 0.15rem 0.5rem; font-size: 0.6rem; }
+    .proj-links { display: flex; gap: 0.75rem; padding-top: 0.3rem; }
+    .proj-link { color: var(--mid); font-size: 0.72rem; text-decoration: none; transition: color 0.2s; }
+    .proj-link:hover { color: var(--accent); }
+
+    /* SKILLS */
+    .skills-row { display: flex; gap: 4rem; flex-wrap: wrap; }
+    .skill-col { display: flex; flex-direction: column; gap: 0.6rem; }
+    .skill-col-label { font-size: 0.62rem; color: var(--mid); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .sk { font-size: 0.82rem; color: var(--mid); transition: color 0.2s; cursor: default; }
+    .sk:hover { color: var(--accent); }
+
+    /* CONTACT */
+    .contact-row { display: flex; gap: 0; flex-direction: column; max-width: 480px; }
+    .cl {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.1rem 0; border-bottom: 1px solid var(--border);
+      color: var(--mid); text-decoration: none; font-size: 0.82rem;
+      transition: color 0.2s;
+    }
+    .cl:first-child { border-top: 1px solid var(--border); }
+    .cl:hover { color: var(--white); }
+    .cl-arrow { transition: transform 0.2s; }
+    .cl:hover .cl-arrow { transform: translateX(4px); }
+
+    footer {
+      padding: 1.5rem 3rem; border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    footer p { font-size: 0.68rem; color: var(--muted); }
+    .f-status { display: flex; align-items: center; gap: 0.4rem; font-size: 0.68rem; color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Spencer Hadlock<span class="dot">.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">about</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#skills">skills</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+  <div class="nav-avail"><div class="dot-sm"></div>available for work</div>
+</nav>
+
+<section class="hero">
+  <div class="hero-top">
+    <div class="hero-label">ECE @ Cornell University · Ithaca, NY</div>
+    <h1>Spencer<br><span class="line2">Hadlock<span class="accent">.</span></span></h1>
+    <p class="hero-desc">
+      Hardware engineer and ECE student at Cornell building FPGA systems, processors, and low-latency software. I work close to the metal.
+    </p>
+  </div>
+  <div class="hero-bottom">
+    <div class="hero-ctas">
+      <a href="#projects" class="btn accent">view work</a>
+      <a href="#contact" class="btn">get in touch</a>
+    </div>
+    <span class="hero-scroll">scroll ↓</span>
+  </div>
+</section>
+
+<div class="stats-strip">
+  <div class="stat"><div class="stat-val">3<span class="a">+</span></div><div class="stat-label">years ECE</div></div>
+  <div class="stat"><div class="stat-val">10<span class="a">+</span></div><div class="stat-label">projects</div></div>
+  <div class="stat"><div class="stat-val"><span class="a">ns</span></div><div class="stat-label">target latency</div></div>
+  <div class="stat"><div class="stat-val">∞</div><div class="stat-label">curiosity</div></div>
+</div>
+
+<section id="about" class="section">
+  <div class="section-label">about</div>
+  <h2>I build hardware<br>that thinks fast.</h2>
+  <p style="color:var(--mid);font-size:0.85rem;line-height:1.9;max-width:58ch;">I'm Spencer, an Electrical and Computer Engineering student at Cornell with a passion for FPGA development, digital design, and systems that operate at the edge of what's physically possible. Whether it's a processor from scratch or embedded firmware, I'm drawn to problems where every nanosecond counts.</p>
+</section>
+
+<section id="projects" class="section">
+  <div class="section-label">projects</div>
+  <h2>Selected Work</h2>
+  <div class="proj-list">
+    <div class="proj">
+      <span class="proj-num">01</span>
+      <div class="proj-body">
+        <h3>RISC-V Single Cycle Processor</h3>
+        <p>Designed and implemented a fully functional single-cycle processor in Verilog executing the RISC-V ISA. Simulated and tested on FPGA hardware with custom assembly programs. Designed the datapath, control unit, and instruction memory from scratch.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Verilog</span>
+          <span class="proj-tag">FPGA</span>
+          <span class="proj-tag">RISC-V</span>
+          <span class="proj-tag">Assembly</span>
+          <span class="proj-tag">Digital Design</span>
+        </div>
+      </div>
+      <div class="proj-links">
+        <a href="#" class="proj-link">Details →</a>
+        <a href="#" class="proj-link">GitHub →</a>
+      </div>
+    </div>
+    <div class="proj">
+      <span class="proj-num">02</span>
+      <div class="proj-body">
+        <h3>Project 2</h3>
+        <p>Coming soon.</p>
+        <div class="proj-tags"><span class="proj-tag">TBD</span></div>
+      </div>
+      <div class="proj-links"></div>
+    </div>
+    <div class="proj">
+      <span class="proj-num">03</span>
+      <div class="proj-body">
+        <h3>Project 3</h3>
+        <p>Coming soon.</p>
+        <div class="proj-tags"><span class="proj-tag">TBD</span></div>
+      </div>
+      <div class="proj-links"></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="section">
+  <div class="section-label">skills</div>
+  <h2>Tech Stack</h2>
+  <div class="skills-row">
+    <div class="skill-col">
+      <div class="skill-col-label">Hardware</div>
+      <span class="sk">Verilog / VHDL</span>
+      <span class="sk">SystemVerilog</span>
+      <span class="sk">FPGA (Xilinx)</span>
+      <span class="sk">HLS</span>
+      <span class="sk">Circuit Design</span>
+    </div>
+    <div class="skill-col">
+      <div class="skill-col-label">Software</div>
+      <span class="sk">C / C++</span>
+      <span class="sk">Python</span>
+      <span class="sk">Assembly (RISC-V)</span>
+      <span class="sk">Linux / Bash</span>
+      <span class="sk">Git</span>
+    </div>
+    <div class="skill-col">
+      <div class="skill-col-label">Tools</div>
+      <span class="sk">Vivado / Quartus</span>
+      <span class="sk">ModelSim</span>
+      <span class="sk">GTKWave</span>
+      <span class="sk">Multisim</span>
+      <span class="sk">LTspice</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="section-label">contact</div>
+  <h2>Let's talk.</h2>
+  <div class="contact-row">
+    <a href="mailto:sdh228@cornell.edu" class="cl">sdh228@cornell.edu<span class="cl-arrow">→</span></a>
+    <a href="https://github.com/sdhadlock" class="cl">github.com/sdhadlock<span class="cl-arrow">→</span></a>
+    <a href="https://linkedin.com/in/spencer-hadlock" class="cl">linkedin / spencer-hadlock<span class="cl-arrow">→</span></a>
+    <a href="../SpencerHadlockResume.pdf" class="cl">Resume (PDF)<span class="cl-arrow">↓</span></a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Spencer Hadlock</p>
+  <div class="f-status"><div class="dot-sm"></div>online</div>
+</footer>
+
+</body>
+</html>

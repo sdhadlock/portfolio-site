@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spencer Hadlock — Synthwave</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --void: #0A0010;
+      --surface: #0F0018;
+      --panel: #130020;
+      --pink: #FF2D9B;
+      --purple: #BF00FF;
+      --cyan: #00F5FF;
+      --pink-dim: rgba(255,45,155,0.4);
+      --pink-glow: rgba(255,45,155,0.07);
+      --text: #D0A8E8;
+      --muted: #4A2060;
+      --border: rgba(191,0,255,0.15);
+    }
+
+    html { font-size: 16px; }
+    body {
+      background: var(--void);
+      color: var(--text);
+      font-family: 'JetBrains Mono', monospace;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    body::after {
+      content: '';
+      position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.02) 2px, rgba(0,0,0,0.02) 4px);
+    }
+
+    /* GRID HORIZON */
+    .grid-horizon {
+      position: fixed; bottom: 0; left: 0; right: 0; height: 35vh;
+      perspective: 400px; overflow: hidden; pointer-events: none; z-index: 0; opacity: 0.25;
+    }
+    .grid-floor {
+      position: absolute; bottom: 0; left: -50%; right: -50%; height: 100%;
+      background-image:
+        linear-gradient(rgba(191,0,255,0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(191,0,255,0.3) 1px, transparent 1px);
+      background-size: 60px 60px;
+      transform: rotateX(60deg);
+      transform-origin: bottom center;
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      padding: 1rem 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(10,0,16,0.95); border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+    .nav-logo {
+      font-size: 0.85rem; font-weight: 700; text-decoration: none;
+      background: linear-gradient(90deg, var(--pink), var(--purple));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.75rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-status { font-size: 0.7rem; color: var(--pink); display: flex; align-items: center; gap: 0.5rem; }
+    .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--pink); box-shadow: 0 0 8px var(--pink); animation: blink 2s infinite; }
+    @keyframes blink { 0%,100%{opacity:1}50%{opacity:0.3} }
+
+    .hero {
+      position: relative; z-index: 1;
+      min-height: calc(100vh - 57px);
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3rem; align-items: center; padding: 4rem 2.5rem;
+    }
+    .prompt-line { font-size: 0.78rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .prompt-line span { color: var(--pink-dim); }
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      font-weight: 700; line-height: 0.95; letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    h1 .name { color: #F0D8FF; }
+    h1 .accent {
+      background: linear-gradient(90deg, var(--pink), var(--cyan));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 15px rgba(255,45,155,0.3));
+    }
+    .hero-sub { color: var(--muted); font-size: 0.8rem; max-width: 44ch; line-height: 1.9; margin-bottom: 2.5rem; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem; }
+    .hero-tag {
+      border: 1px solid rgba(255,45,155,0.2); color: var(--pink-dim);
+      padding: 0.2rem 0.6rem; font-size: 0.62rem;
+      background: rgba(255,45,155,0.05);
+    }
+    .btn-row { display: flex; gap: 0.75rem; }
+    .btn {
+      border: 1px solid var(--pink); color: var(--pink); background: transparent;
+      padding: 0.8rem 1.6rem; font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+      text-decoration: none; transition: all 0.2s;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+    }
+    .btn:hover { background: var(--pink-glow); box-shadow: 0 0 15px rgba(255,45,155,0.15); }
+    .btn.fill {
+      background: linear-gradient(135deg, var(--pink), var(--purple));
+      border: none; color: white; font-weight: 700;
+      box-shadow: 0 0 25px rgba(255,45,155,0.25);
+    }
+    .btn.fill:hover { box-shadow: 0 0 40px rgba(255,45,155,0.4); }
+
+    /* SYNTH PANEL */
+    .synth-panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      position: relative; overflow: hidden;
+      box-shadow: 0 0 60px rgba(191,0,255,0.1), inset 0 0 40px rgba(0,0,0,0.4);
+    }
+    .synth-panel::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--pink), var(--purple), var(--cyan));
+    }
+    .sp-header {
+      padding: 0.75rem 1.25rem; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .sp-title { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+      background: linear-gradient(90deg, var(--pink), var(--purple));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .sp-dots { display: flex; gap: 0.4rem; }
+    .spd { width: 8px; height: 8px; border-radius: 50%; }
+    .sp-body { padding: 1.5rem; font-size: 0.78rem; }
+    .sl { display: flex; gap: 0.6rem; margin-bottom: 0.5rem; }
+    .spp { color: var(--pink-dim); flex-shrink: 0; }
+    .sc { color: var(--text); }
+    .so { color: var(--muted); padding-left: 0.8rem; margin-bottom: 0.75rem; font-size: 0.72rem; line-height: 1.75; }
+    .ss { color: var(--cyan); }
+    .sw { color: var(--pink); }
+    .cursor { display: inline-block; width: 7px; height: 0.9em; background: var(--pink); vertical-align: text-bottom; animation: cur 1s step-end infinite; box-shadow: 0 0 6px var(--pink); }
+    @keyframes cur { 0%,100%{opacity:1}50%{opacity:0} }
+
+    /* TICKER */
+    .ticker { overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--surface); padding: 0.65rem 0; position: relative; z-index: 1; }
+    .ticker-inner { display: flex; gap: 3rem; animation: tick 20s linear infinite; white-space: nowrap; }
+    @keyframes tick { 0%{transform:translateX(0)}100%{transform:translateX(-50%)} }
+    .ti { font-size: 0.65rem; display: flex; gap: 0.6rem; }
+    .tk { color: var(--pink); font-weight: 700; }
+    .tv { color: var(--muted); }
+
+    /* STATS */
+    .stats-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border); position: relative; z-index: 1; }
+    .stat { background: var(--panel); padding: 2rem 1.5rem; }
+    .stat-val {
+      font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; font-weight: 700;
+      line-height: 1; margin-bottom: 0.4rem; letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--pink), var(--purple));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .stat-label { font-size: 0.62rem; color: var(--muted); }
+
+    .section { padding: 4.5rem 2.5rem; border-top: 1px solid var(--border); position: relative; z-index: 1; }
+    .sec-tag { font-size: 0.62rem; letter-spacing: 0.2em; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;
+      background: linear-gradient(90deg, var(--pink), var(--purple));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.75rem,3.5vw,2.75rem); font-weight: 700; letter-spacing: -0.025em; color: #F0D8FF; margin-bottom: 2.5rem; }
+
+    .proj-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 1px; background: var(--border); }
+    .proj { background: var(--panel); padding: 2rem; transition: background 0.2s; }
+    .proj:hover { background: #180028; }
+    .proj-num { font-size: 0.62rem; color: var(--muted); margin-bottom: 1rem; }
+    .proj h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 700; color: #F0D8FF; margin-bottom: 0.75rem; }
+    .proj p { font-size: 0.75rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.25rem; }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem; }
+    .proj-tag { border: 1px solid var(--border); color: var(--pink-dim); padding: 0.15rem 0.5rem; font-size: 0.6rem; }
+    .proj-links { display: flex; gap: 1rem; }
+    .proj-link { color: var(--muted); font-size: 0.72rem; text-decoration: none; transition: color 0.2s; }
+    .proj-link:hover { color: var(--pink); }
+    .proj-link::after { content: ' →'; }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: 1px; background: var(--border); }
+    .skill-group { background: var(--panel); padding: 2rem; }
+    .skill-group h3 {
+      font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.25rem;
+      background: linear-gradient(90deg, var(--pink), var(--purple));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .skill-item { font-size: 0.75rem; color: var(--muted); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; transition: color 0.2s; cursor: default; }
+    .skill-item:hover { color: var(--pink); }
+    .skill-item::before { content: '◈'; color: var(--pink-dim); font-size: 0.5rem; }
+
+    .contact-links { display: flex; flex-direction: column; gap: 0.75rem; max-width: 500px; }
+    .contact-link {
+      display: flex; align-items: center; gap: 1rem; border: 1px solid var(--border);
+      padding: 1rem 1.25rem; color: var(--text); text-decoration: none; font-size: 0.78rem;
+      transition: all 0.2s;
+    }
+    .contact-link:hover { border-color: var(--pink); color: var(--pink); box-shadow: 0 0 15px rgba(255,45,155,0.08); }
+    .cl-label { color: var(--pink-dim); font-size: 0.62rem; min-width: 4.5rem; }
+
+    footer { padding: 1.5rem 2.5rem; border-top: 1px solid var(--border); background: var(--surface); display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1; }
+    footer p { font-size: 0.68rem; color: var(--muted); }
+    .f-status { display: flex; align-items: center; gap: 0.4rem; font-size: 0.68rem; color: var(--pink); }
+  </style>
+</head>
+<body>
+
+<div class="grid-horizon"><div class="grid-floor"></div></div>
+
+<nav>
+  <a href="#" class="nav-logo">spencer@hadlock</a>
+  <ul class="nav-links">
+    <li><a href="#about">about</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#skills">skills</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+  <div class="nav-status"><div class="dot"></div>available</div>
+</nav>
+
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ti"><span class="tk">ECE</span><span class="tv">Cornell University</span></span>
+    <span class="ti"><span class="tk">FPGA</span><span class="tv">Verilog · VHDL</span></span>
+    <span class="ti"><span class="tk">RISC-V</span><span class="tv">ISA Design</span></span>
+    <span class="ti"><span class="tk">STATUS</span><span class="tv">Open to work</span></span>
+    <span class="ti"><span class="tk">VIBE</span><span class="tv">Synthwave + Silicon</span></span>
+    <span class="ti"><span class="tk">ECE</span><span class="tv">Cornell University</span></span>
+    <span class="ti"><span class="tk">FPGA</span><span class="tv">Verilog · VHDL</span></span>
+    <span class="ti"><span class="tk">RISC-V</span><span class="tv">ISA Design</span></span>
+    <span class="ti"><span class="tk">STATUS</span><span class="tv">Open to work</span></span>
+    <span class="ti"><span class="tk">VIBE</span><span class="tv">Synthwave + Silicon</span></span>
+  </div>
+</div>
+
+<section class="hero">
+  <div>
+    <div class="prompt-line"><span>spencer@cornell:~$</span> whoami</div>
+    <h1><span class="name">Spencer</span><br><span class="accent">Hadlock.</span></h1>
+    <p class="hero-sub">// ECE @ Cornell University<br>// Hardware engineer · FPGA dev · latency minimizer<br>// Building circuits at the speed of light.</p>
+    <div class="hero-tags">
+      <span class="hero-tag">Verilog</span><span class="hero-tag">FPGA</span><span class="hero-tag">RISC-V</span><span class="hero-tag">C++</span><span class="hero-tag">Python</span>
+    </div>
+    <div class="btn-row">
+      <a href="#projects" class="btn fill">view_work()</a>
+      <a href="#contact" class="btn">contact()</a>
+    </div>
+  </div>
+  <div class="synth-panel">
+    <div class="sp-header">
+      <span class="sp-title">SYSTEM — spencer@cornell</span>
+      <div class="sp-dots">
+        <div class="spd" style="background:#FF2D9B;box-shadow:0 0 4px #FF2D9B"></div>
+        <div class="spd" style="background:#BF00FF;box-shadow:0 0 4px #BF00FF"></div>
+        <div class="spd" style="background:#00F5FF;box-shadow:0 0 4px #00F5FF"></div>
+      </div>
+    </div>
+    <div class="sp-body">
+      <div class="sl"><span class="spp">~$</span><span class="sc">cat profile.json</span></div>
+      <div class="so">
+        <div>{ <span class="ss">"name"</span>: "Spencer Hadlock",</div>
+        <div>&nbsp;&nbsp;<span class="ss">"school"</span>: "Cornell University",</div>
+        <div>&nbsp;&nbsp;<span class="ss">"major"</span>: "ECE",</div>
+        <div>&nbsp;&nbsp;<span class="ss">"vibe"</span>: <span class="sw">"synthwave + silicon"</span>,</div>
+        <div>&nbsp;&nbsp;<span class="ss">"status"</span>: <span class="sw">"open_to_work"</span> }</div>
+      </div>
+      <div class="sl"><span class="spp">~$</span><span class="sc">./run risc-v --sim</span></div>
+      <div class="so">
+        <div><span class="ss">✓</span> Bitstream loaded successfully</div>
+        <div><span class="ss">✓</span> 47/47 test cases passed</div>
+        <div><span class="ss">✓</span> Clock: 500MHz ▲ STABLE</div>
+      </div>
+      <div class="sl"><span class="spp">~$</span><span class="sc"><span class="cursor"></span></span></div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-row">
+  <div class="stat"><div class="stat-val">3+</div><div class="stat-label">// years ECE</div></div>
+  <div class="stat"><div class="stat-val">10+</div><div class="stat-label">// projects</div></div>
+  <div class="stat"><div class="stat-val">ns</div><div class="stat-label">// latency goal</div></div>
+  <div class="stat"><div class="stat-val">∞</div><div class="stat-label">// curiosity</div></div>
+</div>
+
+<section id="about" class="section">
+  <div class="sec-tag">// about</div>
+  <h2>About Me</h2>
+  <p style="color:var(--muted);font-size:0.82rem;line-height:1.9;max-width:65ch;">I'm Spencer — an ECE student at Cornell who builds hardware that moves at the speed of physics. FPGA design, digital systems, embedded development. If it's close to the metal and involves making things fast, I'm obsessed with it.</p>
+</section>
+
+<section id="projects" class="section">
+  <div class="sec-tag">// projects</div>
+  <h2>What I've Built</h2>
+  <div class="proj-grid">
+    <div class="proj">
+      <div class="proj-num">// 01</div>
+      <h3>RISC-V Single Cycle Processor</h3>
+      <p>Designed and implemented a fully functional single-cycle RISC-V processor in Verilog. Tested on FPGA with custom assembly programs across 47 test cases.</p>
+      <div class="proj-tags"><span class="proj-tag">Verilog</span><span class="proj-tag">FPGA</span><span class="proj-tag">RISC-V</span><span class="proj-tag">Assembly</span></div>
+      <div class="proj-links"><a href="#" class="proj-link">Details</a><a href="#" class="proj-link">GitHub</a></div>
+    </div>
+    <div class="proj"><div class="proj-num">// 02</div><h3>Project 2</h3><p>Coming soon.</p></div>
+    <div class="proj"><div class="proj-num">// 03</div><h3>Project 3</h3><p>Coming soon.</p></div>
+  </div>
+</section>
+
+<section id="skills" class="section">
+  <div class="sec-tag">// skills</div>
+  <h2>Tech Stack</h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <h3>Hardware</h3>
+      <div class="skill-item">Verilog / VHDL</div>
+      <div class="skill-item">FPGA (Xilinx)</div>
+      <div class="skill-item">SystemVerilog</div>
+      <div class="skill-item">Circuit Design</div>
+    </div>
+    <div class="skill-group">
+      <h3>Software</h3>
+      <div class="skill-item">C / C++</div>
+      <div class="skill-item">Python</div>
+      <div class="skill-item">Assembly (RISC-V)</div>
+      <div class="skill-item">Linux / Bash</div>
+    </div>
+    <div class="skill-group">
+      <h3>Tools</h3>
+      <div class="skill-item">Vivado / Quartus</div>
+      <div class="skill-item">ModelSim</div>
+      <div class="skill-item">GTKWave</div>
+      <div class="skill-item">LTspice</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="sec-tag">// contact</div>
+  <h2>Get In Touch</h2>
+  <div class="contact-links">
+    <a href="mailto:sdh228@cornell.edu" class="contact-link"><span class="cl-label">email://</span>sdh228@cornell.edu</a>
+    <a href="https://github.com/sdhadlock" class="contact-link"><span class="cl-label">github://</span>sdhadlock</a>
+    <a href="https://linkedin.com/in/spencer-hadlock" class="contact-link"><span class="cl-label">linkedin://</span>spencer-hadlock</a>
+    <a href="../SpencerHadlockResume.pdf" class="contact-link"><span class="cl-label">resume://</span>SpencerHadlockResume.pdf</a>
+  </div>
+</section>
+
+<footer>
+  <p>spencer@cornell:~$ echo "© 2025 Spencer Hadlock"</p>
+  <div class="f-status"><div class="dot"></div>online</div>
+</footer>
+
+</body>
+</html>

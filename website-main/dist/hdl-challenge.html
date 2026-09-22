@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cornell University's premier low latency technology club.">
+  <title>Build the FIFO. From scratch. | Cornell HFTC</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23111'/%3E%3Ctext x='16' y='24' text-anchor='middle' font-family='serif' font-weight='bold' font-size='25' fill='white'%3EH%3C/text%3E%3C/svg%3E">
+  <style>
+    body { background: white; color: #111; font-family: "Times New Roman", Times, serif; font-size: 18px; line-height: 1.45; }
+    .password-prompt { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; font-size: 16px; }
+    .password-prompt input { width: 160px; max-width: 100%; box-sizing: border-box; padding: 4px 6px; font: inherit; border: 1px solid #777; border-radius: 0; background: white; color: #111; }
+    .password-prompt input:focus-visible { outline: 2px solid #111; outline-offset: 2px; }
+    main { width: 75%; max-width: 960px; margin: 40px auto; }
+    header { text-align: center; }
+    h1 { color: #111; font-size: 2.4em; margin-bottom: 0; }
+    header p { margin-top: 6px; }
+    a, a:visited { color: #111; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 2px solid #111; outline-offset: 3px; }
+    h2 { font-size: 1.25em; }
+    pre { overflow-x: auto; font-size: 0.85em; line-height: 1.5; }
+    hr { border: 0; border-top: 1px solid #777; }
+    footer { margin-top: 32px; font-size: 16px; }
+    @media (max-width: 600px) { main { width: auto; margin: 24px 16px; } h1 { font-size: 2em; } }
+  </style>
+</head>
+<body>
+  <div class="password-prompt">
+    <label for="password">Password:</label>
+    <input id="password" type="password" placeholder="Enter password" autocomplete="off">
+  </div>
+  <main>
+    <p><a href="index.html">Cornell High Frequency Trading Club</a></p>
+    <nav aria-label="Main navigation"><p><a href="index.html">Home</a> &middot; <a href="prior-work.html">Prior work</a> &middot; <a href="contact.html">Contact</a></p></nav>
+    <h1>Build the FIFO. From scratch.</h1>
+    <p>Build a parameterized synchronous FIFO from scratch in SystemVerilog.</p>
+    <h2>Interface</h2>
+    <pre><code>module sync_fifo #(
+    parameter DEPTH = 16,   // power of 2
+    parameter WIDTH = 8
+) (
+    input  logic             clk,
+    input  logic             rst,     // synchronous, active-high
+    input  logic             wr_en,
+    input  logic             rd_en,
+    input  logic [WIDTH-1:0] din,
+    output logic [WIDTH-1:0] dout,
+    output logic             full,
+    output logic             empty,
+    output logic [$clog2(DEPTH):0] count   // number of valid entries, 0..DEPTH
+);</code></pre>
+    <h2>Requirements</h2>
+    <ul>
+      <li>Standard circular-buffer FIFO, one write port, one read port.</li>
+      <li><code>wr_en &amp;&amp; !full</code> writes <code>din</code> on that clock edge.</li>
+      <li><code>rd_en &amp;&amp; !empty</code> presents the oldest entry on <code>dout</code> (registered).</li>
+      <li><code>full</code>/<code>empty</code>/<code>count</code> must be correct including the edge cases:   simultaneous read+write, back-to-back writes to exactly fill it,   back-to-back reads to exactly drain it, and pointer wraparound.</li>
+      <li>No inferred latches, no combinational loops.</li>
+    </ul>
+    <h2>The challenge</h2>
+    <p>Implement the interface in <code>design.sv</code>. Verify reset, simultaneous reads and writes, full and empty boundaries, and pointer wraparound. Aim to write it in under 20 minutes.</p>
+    <p><a href="problem.md" download>Download the original problem</a>. Its references to Q1 and <code>tb.sv</code> refer to materials not included here.</p>
+    <footer>
+      <hr>
+      <p>Cornell HFTC &middot; Ithaca, New York</p>
+    </footer>
+  </main>
+</body>
+</html>

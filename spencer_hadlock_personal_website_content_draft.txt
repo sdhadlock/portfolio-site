@@ -1,0 +1,1429 @@
+SPENCER HADLOCK — PERSONAL WEBSITE CONTENT DRAFT
+Version: First Draft
+Purpose: Source content and structure for a coding agent building a personal portfolio website
+
+==================================================
+1. WEBSITE GOALS
+==================================================
+
+Primary goal:
+Create a professional personal website that presents Spencer Hadlock as an electrical and computer engineering student with experience in digital hardware, embedded systems, PCB design, signal processing, machine learning, software development, electrical construction, leadership, teaching, and outdoor activities.
+
+The website should feel more personal and complete than a one-page resume. It should show:
+- Technical depth
+- Hands-on engineering experience
+- Academic performance
+- Ability to work across hardware and software
+- Practical construction and troubleshooting experience
+- Leadership, teaching, service, and outdoor interests
+- Personality beyond academics and employment
+
+Primary audiences:
+- FPGA, RTL, digital design, hardware, and embedded-systems recruiters
+- Engineering managers and technical interviewers
+- Graduate programs or research groups
+- Professional contacts and networking connections
+- Project-team collaborators
+- Anyone interested in Spencer’s engineering work, background, or hobbies
+
+Suggested website tone:
+- Professional but personal
+- Technically detailed without sounding overly academic
+- Clean, direct, and confident
+- Focused on showing real work, design decisions, results, and lessons learned
+
+Suggested navigation:
+1. Home
+2. About
+3. Experience
+4. Projects
+5. Education
+6. Skills
+7. Leadership & Service
+8. Interests
+9. Resume
+10. Contact
+
+Optional navigation:
+- Coursework
+- Photo Gallery
+- Writing / Notes
+- Currently Working On
+
+
+==================================================
+2. BASIC PROFILE INFORMATION
+==================================================
+
+Name:
+Spencer Hadlock
+
+Professional headline options:
+Option 1:
+Electrical and Computer Engineering Student | Digital Hardware, Embedded Systems, and PCB Design
+
+Option 2:
+ECE Student at Cornell University | FPGA, RTL, Embedded Systems, and Hardware Design
+
+Option 3:
+Electrical and Computer Engineer Focused on Digital Design, Embedded Systems, and Real-World Hardware
+
+Location:
+Ithaca, New York during the academic year
+South Salem, New York / New York metropolitan area when not at Cornell
+
+Citizenship and work authorization:
+United States citizen
+Eligible for an LMIA-exempt Canadian CUSMA work permit for qualifying roles
+
+Public contact information:
+Email: sdh228@cornell.edu
+LinkedIn: www.linkedin.com/in/spencer-hadlock
+
+Do not place the following on the public website unless Spencer specifically approves:
+- Phone number
+- Home address
+- Student identification numbers
+- Date of birth
+- Transcript PDFs containing private information
+
+Suggested profile image:
+A professional headshot with a modern architectural or engineering-themed background.
+
+Suggested hero-section image alternatives:
+- Spencer working on a circuit board or electronics bench
+- Spencer in a Cornell engineering building
+- Spencer climbing or outdoors, paired with a smaller professional headshot
+- A clean technical image showing a PCB, waveform, FPGA board, or robot
+
+
+==================================================
+3. HOME PAGE / HERO SECTION
+==================================================
+
+Suggested hero headline:
+I build systems where hardware, software, and the physical world meet.
+
+Suggested hero subheading:
+I am an Electrical and Computer Engineering student at Cornell University with experience in RTL design, processor verification, embedded systems, PCB development, digital communications, machine learning, and electrical construction.
+
+Suggested shorter subheading:
+Cornell ECE student working across digital hardware, embedded systems, PCB design, and signal processing.
+
+Suggested call-to-action buttons:
+- View My Projects
+- Download Resume
+- Contact Me
+- View Engineering Experience
+
+Suggested quick facts:
+- Cornell ECE, graduating December 2026
+- 3.74 GPA
+- 5+ years of hands-on electrical experience
+- SystemVerilog, Python, C++, Java, MATLAB, and SQL
+- PCB design in Altium
+- Digital hardware, embedded systems, and signal-processing projects
+
+
+==================================================
+4. ABOUT ME
+==================================================
+
+Full-length About section:
+
+I am an Electrical and Computer Engineering student at Cornell University, graduating in December 2026. My interests are centered on the point where digital hardware, embedded software, electronics, and real physical systems come together.
+
+I enjoy projects that require both detailed technical reasoning and hands-on problem solving. At Cornell, I have worked on processor and memory-system verification, digital logic, embedded systems, PCB design, machine learning, digital communications, and autonomous robotics. I have also spent more than five years working as an apprentice electrician, where I learned how designs become real installations and how to diagnose problems under practical constraints.
+
+My engineering background is intentionally broad. I have designed and tested SystemVerilog modules, developed integration testbenches for a processor and its memory and SPI interfaces, designed PCBs in Altium, programmed embedded systems, built a full-stack Android application, trained machine-learning models, and created an acoustic OFDM communication system in Python.
+
+Outside of engineering, I am an Eagle Scout, a certified interior firefighter, a climbing instructor, and an active participant in outdoor activities including rock climbing, backpacking, skiing, slacklining, and camping. I value technical curiosity, self-reliance, teamwork, and the ability to communicate clearly with people from different backgrounds.
+
+I am particularly interested in FPGA, RTL, computer architecture, embedded systems, hardware design, and other roles where careful engineering produces measurable real-world performance.
+
+Short About section:
+
+I am a Cornell Electrical and Computer Engineering student interested in digital hardware, embedded systems, PCB design, and computer architecture. My background combines academic engineering, hands-on electrical construction, processor verification, robotics, software development, and outdoor leadership.
+
+Personal-value themes that can be visually highlighted:
+- Build carefully
+- Test thoroughly
+- Learn continuously
+- Work across disciplines
+- Stay comfortable with real-world constraints
+- Take responsibility for the final result
+
+Optional “Currently” section:
+Currently:
+- Completing my final semester in Electrical and Computer Engineering at Cornell
+- Deepening my experience in computer architecture, RTL, FPGA design, and embedded systems
+- Working on Cornell Nexus autonomous robot electronics
+- Exploring full-time engineering opportunities in the United States and Canada
+
+
+==================================================
+5. EDUCATION
+==================================================
+
+CORNELL UNIVERSITY
+Location:
+Ithaca, New York
+
+Degree:
+Bachelor of Science in Electrical and Computer Engineering
+
+Expected graduation:
+December 2026
+
+GPA:
+3.74 / 4.00
+
+Academic recognition:
+- George & Marie Zahakos Scholarship Recipient, 2023–2026
+- Spring 2026 term GPA: 4.047
+- Completed a 21-credit Spring 2026 semester with grades including A and A+ across advanced ECE courses
+
+Suggested website description:
+
+At Cornell, I have focused on digital hardware, embedded systems, computer architecture, signal processing, communications, machine learning, electromagnetics, probability, and software development. My coursework has combined theoretical foundations with substantial design, implementation, simulation, and testing.
+
+Selected coursework:
+- Computer Architecture
+- Digital Logic and Computer Organization
+- Embedded Systems
+- Digital Communications
+- Signals and Systems
+- Foundations of Machine Learning
+- Probability and Inference
+- Data Science for Engineers
+- Radar and Remote Sensing
+- Electromagnetic Fields and Waves
+- Object-Oriented Programming and Data Structures
+- Circuits for Electrical and Computer Engineers
+- Linear Algebra for Engineers
+- Differential Equations
+- Physics: Electromagnetism, Waves, and Quantum Physics
+- Laser and Photonics
+
+Selected Cornell academic highlights:
+- A in Digital Logic and Computer Organization
+- A in Signals and Systems
+- A in Embedded Systems
+- A in Digital Communications
+- A in Probability and Inference
+- A+ in Foundations of Machine Learning
+- A+ in Intro to Radar and Remote Sensing
+- A in Electromagnetic Fields and Waves
+- A in Data Science for Engineers
+- A in Linear Algebra for Engineers
+
+Possible images:
+- Cornell Duffield Hall or Engineering Quad
+- Lab bench or FPGA development board
+- Screenshot of waveform analysis
+- Photo from Cornell Nexus
+- Coursework diagram, PCB, or project screenshot
+
+Do not publish the complete Cornell transcript by default. A downloadable unofficial transcript should only be included if Spencer explicitly decides that the privacy tradeoff is worthwhile.
+
+
+SUNY WESTCHESTER COMMUNITY COLLEGE
+Location:
+Valhalla, New York
+
+Degree:
+Associate of Science in Liberal Arts and Sciences: Mathematics and Science
+
+Graduation:
+May 2024
+
+GPA:
+3.92 / 4.00
+
+Honors:
+- Graduated with Highest Distinction
+- Phi Theta Kappa Honor Society
+- Selected as one of six valedictorian candidates in a class of approximately 1,300
+- President’s List
+- 4.00 GPA during Fall 2023 and Winter 2024
+
+Suggested website description:
+
+Before transferring to Cornell, I completed an Associate of Science degree at SUNY Westchester Community College. The program gave me a strong foundation in mathematics, physics, chemistry, programming, writing, and engineering science. My time at WCC also gave me the opportunity to tutor other students in the sciences.
+
+Selected coursework:
+- Calculus I, II, and III
+- Engineering Physics I and II
+- Electrical Circuits
+- Statics
+- Computer Programming
+- Inorganic Chemistry I and II
+- General Biology I and II
+- Cultural Anthropology
+- Macroeconomics
+- Writing and Research
+- Writing and Literature
+
+Possible images:
+- Graduation photo
+- Phi Theta Kappa materials
+- WCC campus image
+- Tutoring or classroom photo
+
+
+==================================================
+6. ENGINEERING AND PROFESSIONAL EXPERIENCE
+==================================================
+
+CORNELL UNIVERSITY DEPARTMENT OF ELECTRICAL AND COMPUTER ENGINEERING
+Role:
+Course Development Intern
+
+Dates:
+May 2026 – August 2026
+
+Location:
+Ithaca, New York
+
+Short summary:
+Worked on the development, verification, debugging, and organization of digital-design course materials used by approximately 120 students.
+
+Expanded website description:
+
+As a Course Development Intern in Cornell’s Department of Electrical and Computer Engineering, I worked on instructional hardware-design infrastructure spanning basic display logic through processor-level integration.
+
+A major focus of my work was developing and improving SystemVerilog verification for a single-cycle processor and its surrounding interfaces. I built integration test harnesses covering reset behavior, control signals, memory interactions, SPI communication, and timing-sensitive behavior. I used both positive and negative tests to verify expected operation and identify malformed, invalid, or unexpected inputs.
+
+When failures occurred, I used waveform analysis and cross-module signal tracing in Surfer to isolate the source of bugs. This required understanding how individual modules behaved in isolation and how errors propagated through the processor, bus, memory, and peripheral interfaces.
+
+I also refactored and debugged a 63-module Verilog/SystemVerilog codebase used across four course labs. The labs progressed from display logic and foundational modules to more complex processor design. In addition, I helped build a submission workflow for roughly 120 students, making lab progress, organization, submission status, and grading easier to track.
+
+Key contributions:
+- Built SystemVerilog integration testbenches for a single-cycle processor
+- Verified memory-bus and SPI interactions
+- Used positive, negative, reset, and timing-sensitive test cases
+- Diagnosed module failures through waveform analysis
+- Traced signals across processor, memory, bus, and peripheral modules
+- Refactored and debugged a 63-module codebase
+- Supported four ECE laboratory assignments
+- Built a submission and grading workflow for approximately 120 students
+- Developed formatting tools to improve SystemVerilog consistency and readability
+
+Technologies:
+SystemVerilog, Verilog, RTL design, testbench development, Surfer, Verilator, IVerilog, Git, Linux, waveform debugging
+
+Suggested images:
+- Sanitized waveform screenshot
+- Processor block diagram
+- Testbench architecture diagram
+- Screenshot of formatted SystemVerilog
+- Lab hardware or FPGA board
+- Abstract visualization showing processor, memory, and SPI connections
+
+Important confidentiality note:
+Do not publish course solution code, private repositories, answer keys, student data, or internal Cornell materials. Use sanitized diagrams and original explanations instead.
+
+
+CORNELL NEXUS PROJECT TEAM
+Role:
+Electrical Subteam Member
+
+Dates:
+September 2025 – Present
+
+Location:
+Ithaca, New York
+
+Short summary:
+Designing and integrating electronics for an autonomous robot, including custom PCBs for power, sensing, communication, and signal processing.
+
+Expanded website description:
+
+As a member of the Cornell Nexus Electrical Subteam, I contribute to the design and integration of electronics for an autonomous robotic system. My work includes custom PCB design in Altium, schematic review, board-level planning, documentation, cross-functional coordination, and bring-up support.
+
+I have worked on five PCBs serving different functions across the robot’s electrical system, including power distribution, communication, sensor interfaces, and signal processing. The work requires translating mechanical and software requirements into reliable electrical interfaces and ensuring that board-level decisions remain compatible with the full system.
+
+I coordinate with mechanical and software subteams to understand motor, sensor, power, communication, connector, mounting, and data requirements. I also document design decisions, wiring references, and team procedures on the team wiki so that future members can understand and maintain the system.
+
+During board bring-up and review, I help validate schematics, inspect connections, identify integration issues, and debug problems that may prevent a design from passing checks or operating correctly.
+
+Key contributions:
+- Designed or contributed to five PCBs in Altium Designer
+- Worked across power, communication, sensing, and signal-processing functions
+- Reviewed schematics and electrical interfaces
+- Coordinated requirements with software and mechanical subteams
+- Documented wiring, design decisions, and team procedures
+- Supported PCB bring-up and debugging
+- Helped verify board connectivity and design-rule compliance
+- Considered complete system integration rather than isolated board behavior
+
+Technologies:
+Altium Designer, PCB design, schematic capture, embedded systems, sensors, motors, power systems, Git, technical documentation
+
+Suggested images:
+- Rendered PCB front and back
+- Schematic excerpt with sensitive details removed
+- Photo of assembled robot
+- Electrical architecture diagram
+- Board bring-up photo
+- Team photo
+- Connector or wiring diagram
+
+Important confidentiality note:
+Only publish designs, images, and technical details approved for public release by Cornell Nexus.
+
+
+LEWISBORO ELECTRICAL SERVICES
+Role:
+Apprentice Electrician
+
+Dates:
+June 2020 – Present
+
+Location:
+South Salem, New York
+
+Short summary:
+More than five years of hands-on experience installing, upgrading, programming, and troubleshooting residential and commercial electrical systems.
+
+Expanded website description:
+
+My work as an apprentice electrician has given me a practical engineering perspective that is difficult to gain only in a classroom. I have worked on residential and commercial projects involving service equipment, lighting, receptacles, switches, renovations, new construction, automation systems, and troubleshooting.
+
+I read drawings, follow the National Electrical Code and local building requirements, coordinate with general contractors and other skilled trades, and adapt installations to changing site conditions. I have learned to identify problems quickly, communicate clearly, and complete work that must be safe, reliable, maintainable, and inspectable.
+
+I have also programmed and installed Lutron HomeWorks and RadioRA 3 systems using Designer Pro. These projects combine traditional electrical installation with lighting control, shades, automation logic, device configuration, and user-oriented system behavior.
+
+Key responsibilities:
+- Installed and upgraded residential and commercial electrical systems
+- Wired service equipment, lighting circuits, receptacles, switches, and controls
+- Worked on renovations and new-build projects
+- Read blueprints and coordinated installations with other trades
+- Followed NEC and local building-code requirements
+- Diagnosed issues during service calls
+- Resolved conflicts between electrical systems and building conditions
+- Programmed Lutron HomeWorks and RadioRA 3 automation systems
+- Worked with lighting, shade, and control integration
+
+Skills developed:
+Hands-on troubleshooting, construction planning, safety, code awareness, client communication, interdisciplinary coordination, installation quality, system integration
+
+Suggested images:
+- Electrical panel or service installation
+- Lighting-control keypad installation
+- Lutron programming screenshot with client data removed
+- Organized conduit or wiring work
+- Jobsite photo
+- Before-and-after installation
+- Tools and electrical workspace
+
+Important privacy note:
+Do not publish client addresses, names, floor plans, security-system information, or identifiable residential details.
+
+
+CORNELL OUTDOOR EDUCATION
+Role:
+Climbing Instructor
+
+Dates:
+August 2025 – Present
+
+Location:
+Ithaca, New York
+
+Expanded website description:
+
+As a climbing instructor with Cornell Outdoor Education, I teach classes of approximately 18 to 20 beginner climbers. I introduce foundational climbing technique, equipment use, communication, risk management, and group safety.
+
+The role has strengthened my ability to explain unfamiliar concepts clearly, monitor multiple people at once, adapt instruction to different comfort levels, and create an environment where students can challenge themselves safely.
+
+Key responsibilities:
+- Taught beginner climbing technique
+- Managed safety for groups of 18–20 students
+- Demonstrated equipment use and foundational movement
+- Communicated risk-management procedures
+- Adapted instruction for different learning styles and confidence levels
+- Helped students become more comfortable in a new physical environment
+
+Suggested images:
+- Teaching at the climbing wall
+- Group climbing photo
+- Outdoor climbing image
+- Equipment setup
+- Cornell Outdoor Education setting
+
+
+WCC SCIENCE DEPARTMENT — ACADEMIC SUPPORT CENTER
+Role:
+Tutor
+
+Dates:
+November 2023 – June 2024
+
+Location:
+Westchester Community College, New York
+
+Expanded website description:
+
+At Westchester Community College, I provided one-on-one and small-group tutoring in chemistry, biology, and physics. I helped students break difficult problems into manageable steps, connect equations to physical concepts, and build confidence in technical subjects.
+
+This experience improved my ability to identify where someone’s understanding diverges from a solution and to explain the same concept in multiple ways.
+
+Subjects:
+- Chemistry
+- Biology
+- Physics
+
+Suggested images:
+- Academic Support Center
+- Tutoring or study setting
+- Whiteboard with a general science problem
+
+
+==================================================
+7. FEATURED PROJECTS
+==================================================
+
+PROJECT 1: DIRECT-MAPPED CACHE RTL DESIGN
+Category:
+Digital Hardware / Computer Architecture / SystemVerilog
+
+Suggested project tagline:
+A SystemVerilog cache design combining single-cycle hit detection with multi-cycle miss handling.
+
+Overview:
+
+I designed a direct-mapped cache in SystemVerilog with a combinational tag-comparison and hit-detection path for single-cycle cache hits. Cache misses are handled by a finite-state machine that coordinates memory requests, waits for the external memory system, refills the selected cache line, updates metadata, and returns the requested data to the processor.
+
+The design uses a wait-based memory-side handshake, requiring the cache controller to remain correct even when memory response latency varies. I created directed testbenches to validate hits, misses, refills, replacement behavior, processor-facing behavior, and memory-facing behavior.
+
+Technical areas:
+- Direct-mapped cache organization
+- Tag, valid, and data storage
+- Address decomposition
+- Combinational hit detection
+- Finite-state machine control
+- Multi-cycle miss handling
+- Memory handshake protocols
+- Cache refill and replacement
+- Processor and memory interfaces
+- Directed SystemVerilog testing
+- Waveform-based debugging
+
+Challenges:
+- Preserving a fast combinational path for hits while managing a multi-cycle miss path
+- Correctly coordinating state transitions with an external wait signal
+- Ensuring the processor receives valid data at the correct time
+- Separating metadata updates from request and response timing
+- Testing both normal cases and edge conditions
+
+Suggested project-page sections:
+1. Problem
+2. Architecture
+3. Address breakdown
+4. Hit path
+5. Miss and refill FSM
+6. Memory handshake
+7. Verification strategy
+8. Waveform examples
+9. Bugs discovered
+10. Lessons learned
+
+Suggested visuals:
+- Cache block diagram
+- Address bit-field diagram
+- FSM state diagram
+- Hit waveform
+- Miss/refill waveform
+- Testbench diagram
+- Small sanitized code excerpt
+
+
+PROJECT 2: OFDM AUDIO COMMUNICATION SYSTEM
+Category:
+Digital Communications / Signal Processing / Python
+
+Suggested project tagline:
+An end-to-end OFDM modem transmitting data through an acoustic channel at approximately 70 kbps.
+
+Overview:
+
+I built an end-to-end orthogonal frequency-division multiplexing communication system in Python that transmitted digital data through speakers and microphones. The system achieved approximately 70 kbps of reliable data transmission over an acoustic channel.
+
+The transmitter mapped data into Gray-coded QAM symbols, assigned bits adaptively across OFDM subcarriers, generated time-domain frames, and played the signal through audio hardware. The receiver detected frames, corrected clock mismatch, estimated the acoustic channel, equalized subcarriers, demodulated the QAM symbols, and reconstructed the transmitted data.
+
+Technical areas:
+- OFDM
+- QAM modulation and demodulation
+- Gray-coded constellations
+- Subcarrier mapping
+- Adaptive per-tone bit allocation
+- Frame synchronization
+- Cross-correlation
+- Clock-skew correction
+- Channel estimation
+- Equalization
+- Iterative receiver improvement
+- Real-time audio input and output
+- Python signal-processing pipelines
+
+Result:
+Approximately 70 kbps over an acoustic channel.
+
+Challenges:
+- Real audio channels introduce echoes, frequency-dependent attenuation, noise, and hardware imperfections
+- Transmitter and receiver clocks do not run at exactly the same rate
+- Reliable synchronization is necessary before symbol recovery can begin
+- Different subcarriers have different signal quality
+- The receiver must estimate and compensate for channel distortion
+
+Suggested project-page sections:
+1. Communication goal
+2. System architecture
+3. Transmitter pipeline
+4. OFDM frame structure
+5. Synchronization
+6. Clock correction
+7. Channel estimation and equalization
+8. Adaptive bit loading
+9. Results
+10. Lessons learned
+
+Suggested visuals:
+- Transmitter/receiver block diagram
+- QAM constellation
+- OFDM spectrum
+- Frame-correlation peak
+- Before-and-after equalization constellation
+- Bit allocation per subcarrier
+- Photo of audio setup
+- Short audio or video demonstration
+
+
+PROJECT 3: MULTI-LABEL DIGIT CLASSIFICATION
+Category:
+Machine Learning / Computer Vision / Python
+
+Suggested project tagline:
+A dual-output image-classification system for identifying two overlaid handwritten digits.
+
+Overview:
+
+I developed a machine-learning system that identifies pairs of overlaid handwritten digits. Unlike a conventional single-label classifier, the system must predict both digit classes visible in each input image.
+
+I trained and compared convolutional neural networks, support vector machines, and baseline approaches. I used preprocessing, data augmentation, cross-validation, and error analysis to reduce overfitting and improve generalization. The best-performing approaches reached approximately 97% test accuracy.
+
+Technical areas:
+- Multi-label and dual-output classification
+- Convolutional neural networks
+- Support vector machines
+- Image preprocessing
+- Data augmentation
+- Cross-validation
+- Hyperparameter comparison
+- Error analysis
+- Generalization from limited training data
+- PyTorch, TensorFlow, scikit-learn, NumPy, pandas, Matplotlib
+
+Result:
+Approximately 97% overall test accuracy.
+
+Challenges:
+- Two digits may overlap heavily
+- One digit can partially obscure another
+- Digit order and label representation must be handled consistently
+- Limited data increases overfitting risk
+- Some class combinations are more visually ambiguous than others
+
+Suggested project-page sections:
+1. Problem definition
+2. Dataset
+3. Preprocessing
+4. Baseline models
+5. CNN architecture
+6. SVM approach
+7. Validation strategy
+8. Results
+9. Error analysis
+10. Lessons learned
+
+Suggested visuals:
+- Example overlaid digits
+- CNN diagram
+- Confusion matrix
+- Accuracy comparison
+- Training and validation curves
+- Correct and incorrect predictions
+- Data-augmentation examples
+
+
+PROJECT 4: STUDY PARTNER MATCHING APP
+Category:
+Full-Stack Software / Android / Backend Development
+
+Suggested project tagline:
+A full-stack Android application that matches students using schedules, courses, and study preferences.
+
+Overview:
+
+I helped build a full-stack Android application that matches students with compatible study partners. The application collects schedule availability, course overlap, and study preferences, then queries a relational database to return personalized matches.
+
+I worked on the backend data structure and API workflow, including storing user profiles and schedules, processing partner-search queries, and returning matching results to the Android front end.
+
+Technical areas:
+- Android application development
+- Backend development
+- REST API design
+- Relational databases
+- SQL and SQLite
+- User profiles
+- Schedule representation
+- Search and matching logic
+- Front-end/back-end communication
+- Real-time query results
+
+Challenges:
+- Representing schedules in a form that can be searched efficiently
+- Combining hard constraints, such as availability, with softer preferences
+- Structuring relational data for users, courses, and schedules
+- Designing API endpoints that return useful information to the front end
+- Creating a matching process that is understandable to users
+
+Suggested project-page sections:
+1. User problem
+2. Product concept
+3. Data model
+4. Matching logic
+5. API design
+6. Android interface
+7. Example user flow
+8. Limitations
+9. Future improvements
+
+Suggested visuals:
+- App screenshots
+- Database entity-relationship diagram
+- API flow diagram
+- Matching-process illustration
+- Example schedule comparison
+
+
+PROJECT 5: SINGLE-CYCLE PROCESSOR INTEGRATION AND VERIFICATION
+Category:
+RTL Verification / Processor Design / SystemVerilog
+
+Suggested project tagline:
+Integration-level verification of a processor, memory bus, and SPI subsystem.
+
+Overview:
+
+During my Cornell ECE course-development work, I developed integration tests for a single-cycle processor and its connected memory and SPI systems. Rather than only verifying modules in isolation, the testbench exercised behavior across module boundaries and checked how control, reset, memory, and peripheral signals interacted over time.
+
+The verification approach included normal operation, reset behavior, malformed or invalid inputs, timing-sensitive cases, and negative tests designed to expose incorrect assumptions.
+
+Technical areas:
+- Processor integration
+- SystemVerilog testbenches
+- Memory bus protocols
+- SPI integration
+- Reset verification
+- Directed testing
+- Negative testing
+- Cross-module debugging
+- Waveform analysis
+- Failure isolation
+
+Suggested visuals:
+- Sanitized processor subsystem diagram
+- Verification architecture
+- Example waveform
+- Table of test categories
+- Bug-to-root-cause example
+
+Confidentiality:
+This page should explain the methods and engineering lessons without publishing protected Cornell course solutions.
+
+
+PROJECT 6: CORNELL NEXUS PCB PORTFOLIO
+Category:
+PCB Design / Robotics / Embedded Hardware
+
+Suggested project tagline:
+A collection of custom robot electronics designed for power, sensing, communications, and integration.
+
+Overview:
+
+This portfolio page can organize Spencer’s Cornell Nexus board work into separate cards. Each board card should explain:
+- The problem the board solves
+- Inputs and outputs
+- Major components
+- Power requirements
+- Communication interfaces
+- Mechanical constraints
+- Design tradeoffs
+- Testing and bring-up
+- Revision history
+- Lessons learned
+
+Possible board categories:
+- Power distribution
+- Sensor acquisition
+- Motor interface
+- Communication
+- Signal processing
+
+Only public or approved information should be shown.
+
+
+==================================================
+8. ADDITIONAL POSSIBLE PROJECTS TO ADD LATER
+==================================================
+
+These are not fully documented in the uploaded resumes and transcripts, but may be worth adding after Spencer supplies more details:
+
+- Embedded-systems projects from ECE 3140
+- Digital-logic laboratory modules
+- Music player or note-player RTL
+- Processor design
+- SPI controller
+- Memory subsystem
+- Autonomous robot sensor integration
+- Raspberry Pi encoder and IMU integration
+- Electrical automation or Lutron programming case study
+- Data-science project from ECE 2720
+- Radar and remote-sensing project
+- Personal electronics builds
+- GitHub repositories
+- FPGA board demonstrations
+
+For each future project, collect:
+- Project title
+- Date
+- Class, team, or personal context
+- Team size
+- Spencer’s exact contribution
+- Problem
+- Design
+- Technologies
+- Results
+- Challenges
+- Lessons
+- Photos
+- Diagrams
+- Demo video
+- GitHub or report link
+
+
+==================================================
+9. TECHNICAL SKILLS
+==================================================
+
+Suggested display:
+Use grouped skill categories rather than one long list. Skill levels should not be represented by arbitrary percentage bars.
+
+HDL and digital design:
+- SystemVerilog
+- Verilog
+- RTL design
+- Finite-state machines
+- Testbench development
+- Integration testing
+- Negative testing
+- Waveform debugging
+- Processor verification
+- Cache design
+- Intel Quartus
+- Verilator
+- IVerilog
+- Surfer
+
+Programming:
+- Python
+- C++
+- Java
+- MATLAB
+- ARM Assembly
+- SQL
+- SQLite
+
+Python and data tools:
+- NumPy
+- pandas
+- scikit-learn
+- PyTorch
+- TensorFlow
+- Matplotlib
+
+Hardware and embedded systems:
+- Embedded systems
+- PCB design
+- Altium Designer
+- Schematic capture
+- Sensor integration
+- Motor and power-system coordination
+- Electrical troubleshooting
+- Lutron HomeWorks
+- Lutron RadioRA 3
+- Designer Pro
+
+Engineering and design tools:
+- Linux
+- Git
+- Fusion 360
+- SolidWorks
+- AutoCAD
+- Bluebeam
+
+Core technical areas:
+- Computer architecture
+- Digital communications
+- Signal processing
+- Machine learning
+- Electromagnetics
+- Probability and inference
+- Radar and remote sensing
+- Data science
+- Electrical construction
+
+Professional skills:
+- Technical documentation
+- Cross-functional collaboration
+- Teaching
+- Troubleshooting
+- Safety
+- Requirements coordination
+- Hands-on construction
+- Project organization
+
+
+==================================================
+10. LEADERSHIP, SERVICE, AND CERTIFICATIONS
+==================================================
+
+EAGLE SCOUT
+
+Suggested description:
+
+Becoming an Eagle Scout required long-term planning, leadership, service, practical outdoor skills, and responsibility. The experience shaped how I approach technical projects: prepare carefully, take ownership, remain calm when conditions change, and help the team succeed.
+
+Add later:
+- Eagle Scout project description
+- Number of volunteers or service hours
+- Beneficiary organization
+- Photos
+- Planning documents or before-and-after images
+
+
+VOLUNTEER FIREFIGHTER / FIRE SERVICE
+
+Certifications:
+- New York State Interior Firefighter
+- Interior Firefighting Operations
+- Basic Exterior Firefighting Operations
+- Hazardous Materials
+- CPR and First Aid
+
+Suggested description:
+
+Fire-service training has reinforced the importance of preparation, teamwork, communication, risk awareness, and performing reliably under pressure. It has also given me experience working in environments where safety procedures and trust between team members are essential.
+
+Add later:
+- Department role
+- Training milestones
+- Years of service
+- Approved photos
+- Community-service experiences
+
+Do not publish operationally sensitive information.
+
+
+CORNELL IEEE
+Role:
+Committee Member
+
+Suggested description:
+Participation in Cornell IEEE provides opportunities to engage with other students interested in electrical engineering, computer engineering, electronics, and technical professional development.
+
+Add later:
+- Committee responsibilities
+- Events organized
+- Workshops
+- Photos
+
+
+OTHER CLUBS AND ACTIVITIES
+- Cornell Climbing Club
+- Slackline Club
+- Cornell HFTC
+- Club Lacrosse
+
+Clarify the full name of “Cornell HFTC” before publishing.
+
+
+==================================================
+11. INTERESTS AND PERSONALITY
+==================================================
+
+Suggested section title:
+Beyond Engineering
+
+Intro text:
+
+Engineering is a major part of my life, but many of the habits I bring to technical work come from the outdoors and from hands-on hobbies. I enjoy activities that reward patience, self-reliance, practice, and problem solving.
+
+BACKPACKING AND CAMPING
+
+Suggested description:
+I enjoy multi-day backpacking and camping trips that require route planning, equipment selection, risk management, and the ability to adapt to weather and changing conditions.
+
+Possible content:
+- Favorite trips
+- Gear setup
+- Maps
+- Photo galleries
+- Lessons from trips
+
+
+ROCK CLIMBING
+
+Suggested description:
+Rock climbing combines technical movement, problem solving, trust, and risk management. I climb personally and also teach beginner climbers through Cornell Outdoor Education.
+
+Possible content:
+- Indoor and outdoor climbing
+- Teaching
+- Favorite areas
+- Progression
+- Photos
+
+
+SKIING
+
+Suggested description:
+Skiing is one of my favorite ways to spend time outdoors during the winter. It combines technical improvement, terrain awareness, and exploration.
+
+Possible content:
+- Favorite mountains
+- Trip galleries
+- Ski goals
+
+
+SLACKLINING
+
+Suggested description:
+Slacklining is a practice in balance, focus, and incremental improvement. It is also a social outdoor activity and a useful contrast to long periods of technical work.
+
+Possible content:
+- Indoor and outdoor setups
+- Progression photos
+- Cornell Slackline Club
+
+
+HOMEMADE YOGURT
+
+Suggested description:
+I enjoy making homemade yogurt and experimenting with small adjustments to ingredients, temperature, incubation time, and texture. It is a simple hobby, but it reflects the same experimental mindset I enjoy in engineering.
+
+Possible content:
+- Process photos
+- Recipe notes
+- Experiment log
+
+
+SPEED CUBING AND SUDOKU
+
+Suggested description:
+Speed cubing and Sudoku appeal to my interest in patterns, algorithms, and continuous improvement. Both reward a combination of memorized techniques and flexible problem solving.
+
+Possible content:
+- Personal-best times
+- Favorite cube
+- Solving methods
+- Puzzle recommendations
+
+
+OTHER INTERESTS THAT MAY BE ADDED
+- Fishing
+- Hiking
+- Lap swimming
+- Gym and fitness
+- Travel
+- Biking
+- Outdoor education
+
+
+==================================================
+12. OPTIONAL PERSONAL STORY / TIMELINE
+==================================================
+
+Suggested timeline:
+
+2020
+- Began working as an apprentice electrician with Lewisboro Electrical Services
+
+2023
+- Started college coursework at SUNY Westchester Community College
+- Earned a 4.00 GPA in Fall 2023
+- Began tutoring in chemistry, biology, and physics
+
+2024
+- Graduated from WCC with an Associate of Science
+- Graduated with Highest Distinction
+- Selected as one of six valedictorian candidates
+- Transferred to Cornell University
+- Began Cornell ECE coursework
+- Built a backend-focused study partner application
+
+2025
+- Completed core coursework in circuits, data science, programming, digital logic, signals, and electromagnetics
+- Joined Cornell Nexus
+- Began teaching climbing through Cornell Outdoor Education
+
+2026
+- Completed advanced coursework in embedded systems, machine learning, digital communications, probability, and radar
+- Earned a 4.047 Spring 2026 term GPA
+- Worked as a Cornell ECE Course Development Intern
+- Developed processor integration testbenches and improved course infrastructure
+- Continued Nexus PCB and robotics work
+- Expected to graduate in December 2026
+
+
+==================================================
+13. RESUME PAGE
+==================================================
+
+Suggested structure:
+- Embedded PDF viewer
+- Download button
+- Separate variants for different role types
+
+Possible resume variants:
+1. General engineering resume
+2. FPGA / RTL / digital hardware resume
+3. Embedded systems / PCB resume
+4. Software / machine-learning resume
+5. Canada-oriented resume with CUSMA work-permit note
+
+Recommended public default:
+Use the most recent general engineering or FPGA-focused resume.
+
+Do not upload multiple outdated resumes without clear labeling.
+
+Suggested labels:
+- Current Resume
+- Digital Hardware Resume
+- Embedded Systems Resume
+
+
+==================================================
+14. CONTACT PAGE
+==================================================
+
+Suggested headline:
+Let’s build something.
+
+Suggested text:
+I am interested in full-time opportunities involving FPGA development, RTL design, embedded systems, computer architecture, PCB design, hardware verification, and related engineering work. I am also happy to connect with engineers, researchers, students, and project teams working on challenging hardware and software systems.
+
+Contact options:
+- Cornell email
+- LinkedIn
+- Contact form
+
+Optional fields in contact form:
+- Name
+- Email
+- Organization
+- Subject
+- Message
+
+Spam and privacy:
+- Use CAPTCHA or another anti-spam measure
+- Do not expose a phone number by default
+- Do not expose personal addresses
+
+
+==================================================
+15. WEBSITE DESIGN DIRECTION
+==================================================
+
+Visual identity:
+- Clean engineering aesthetic
+- Light or dark neutral base
+- One restrained accent color
+- Large technical project images
+- Clear typography
+- Avoid excessive animations
+- Use subtle circuit, waveform, grid, or blueprint elements
+
+Suggested home-page structure:
+1. Hero
+2. Short introduction
+3. Featured projects
+4. Experience highlights
+5. Technical skills
+6. Personal interests
+7. Contact call-to-action
+
+Project-card structure:
+- Project name
+- One-sentence purpose
+- Role
+- Technologies
+- Result
+- Image
+- Link to full case study
+
+Experience-card structure:
+- Organization
+- Role
+- Dates
+- One-paragraph summary
+- Selected contributions
+- Technologies
+- Gallery
+
+Suggested interactive elements:
+- Filter projects by Hardware, Embedded, Software, Signal Processing, and Machine Learning
+- Expandable technical details
+- Image galleries
+- Before-and-after comparisons
+- Waveform slider
+- PCB front/back toggle
+- Timeline
+- Downloadable resume
+- GitHub links
+- Mobile-friendly project cards
+
+Accessibility:
+- Add alt text to every image
+- Maintain strong contrast
+- Make all interactions keyboard accessible
+- Avoid conveying information by color alone
+- Support reduced-motion preferences
+
+
+==================================================
+16. PHOTO AND MEDIA CHECKLIST
+==================================================
+
+Professional:
+- Headshot
+- Cornell engineering-building photo
+- Working-at-lab-bench photo
+
+Course Development Internship:
+- Sanitized waveform
+- Processor block diagram
+- FPGA board
+- Testbench diagram
+
+Cornell Nexus:
+- Robot
+- PCB renders
+- Assembled boards
+- Team photo
+- Bring-up/testing photos
+
+Projects:
+- OFDM plots
+- QAM constellation
+- ML example images
+- Confusion matrix
+- App screenshots
+- Cache FSM
+- Simulation waveforms
+
+Electrical work:
+- Panels
+- Lighting controls
+- Clean wiring
+- Jobsite photos
+- Tools
+
+Leadership and service:
+- Eagle Scout photo
+- Fire-service photo approved for public use
+- Climbing-instructor photo
+
+Personal:
+- Backpacking
+- Skiing
+- Rock climbing
+- Slacklining
+- Homemade yogurt
+- Speed cubing
+
+Every image should have:
+- File name
+- Caption
+- Date
+- Location
+- Photographer credit if needed
+- Permission status
+- Alt text
+- Whether it is public, private, or requires approval
+
+
+==================================================
+17. LINKS AND ASSETS TO COLLECT
+==================================================
+
+Required:
+- Current resume PDF
+- LinkedIn URL
+- Professional headshot
+- Preferred email
+- GitHub profile, if public
+
+Project links:
+- GitHub repositories
+- Reports
+- Demo videos
+- Slide decks
+- Posters
+- Technical writeups
+
+Organization links:
+- Cornell ECE
+- Cornell Nexus
+- Cornell Outdoor Education
+- WCC
+- Cornell IEEE
+
+Optional:
+- Google Scholar, if applicable
+- Personal GitHub activity
+- Devpost
+- LinkedIn project posts
+- Technical blog posts
+
+
+==================================================
+18. INFORMATION TO VERIFY BEFORE PUBLICATION
+==================================================
+
+The coding agent should leave editable placeholders for these items:
+
+- Exact preferred professional headline
+- Whether to publish the 3.74 GPA
+- Whether to mention Canadian CUSMA eligibility on the homepage or only resume
+- Whether to include the Cornell email after graduation
+- Preferred permanent email address
+- GitHub URL
+- Full name of Cornell HFTC
+- Exact responsibilities in Cornell IEEE
+- Eagle Scout project details
+- Volunteer firefighter department and service dates
+- Names and details of the five Nexus PCBs
+- Which Nexus materials are approved for public release
+- Whether Course Development Internship materials can be shown
+- Specific embedded-systems projects
+- Specific radar project
+- Specific data-science project
+- Favorite outdoor trips and locations
+- Personal records for speed cubing
+- Whether a blog or technical-notes section is desired
+- Whether contact form submissions should go to Cornell or personal email
+
+
+==================================================
+19. PRIVACY AND PUBLICATION RULES
+==================================================
+
+Do not publish:
+- Student ID numbers
+- Date of birth
+- Home address
+- Full transcript files by default
+- Private course materials
+- Course answer keys or solution repositories
+- Private GitHub repositories
+- Student submissions or grades
+- Client addresses or identifying jobsite information
+- Fire-department operational details
+- Team intellectual property without approval
+- Personal phone number unless explicitly approved
+
+Use transcript information only to summarize:
+- Degree
+- GPA
+- graduation date
+- selected coursework
+- honors
+- selected academic performance
+
+The website should not directly host the uploaded transcripts unless Spencer explicitly requests it after reviewing the privacy implications.
+
+
+==================================================
+20. SHORT BIOS
+==================================================
+
+ONE-SENTENCE BIO:
+
+Spencer Hadlock is a Cornell Electrical and Computer Engineering student focused on digital hardware, embedded systems, PCB design, computer architecture, and real-world engineering.
+
+50-WORD BIO:
+
+Spencer Hadlock is an Electrical and Computer Engineering student at Cornell University graduating in December 2026. His experience spans SystemVerilog verification, computer architecture, embedded systems, PCB design, digital communications, machine learning, robotics, and electrical construction. Outside engineering, he is an Eagle Scout, firefighter, climbing instructor, and outdoor enthusiast.
+
+100-WORD BIO:
+
+Spencer Hadlock is an Electrical and Computer Engineering student at Cornell University, graduating in December 2026. He is interested in FPGA development, RTL design, embedded systems, computer architecture, and PCB design. His experience includes processor integration testing, SystemVerilog verification, autonomous-robot electronics, acoustic OFDM communication, machine learning, full-stack software, and more than five years of electrical construction work. He has also taught climbing through Cornell Outdoor Education and tutored chemistry, biology, and physics. Spencer is an Eagle Scout and trained interior firefighter who enjoys backpacking, skiing, rock climbing, slacklining, speed cubing, Sudoku, and making homemade yogurt.
+
+
+==================================================
+21. SUGGESTED METADATA FOR THE CODING AGENT
+==================================================
+
+Site title:
+Spencer Hadlock | Electrical and Computer Engineering
+
+Meta description:
+Portfolio of Spencer Hadlock, a Cornell Electrical and Computer Engineering student focused on FPGA, RTL, embedded systems, PCB design, computer architecture, signal processing, and robotics.
+
+Suggested keywords:
+Spencer Hadlock, Cornell ECE, electrical engineering, computer engineering, FPGA, RTL, SystemVerilog, embedded systems, PCB design, Altium, computer architecture, digital hardware, signal processing, OFDM, machine learning, robotics
+
+Open Graph title:
+Spencer Hadlock — Electrical and Computer Engineering
+
+Open Graph description:
+Projects and experience in digital hardware, embedded systems, PCB design, processor verification, communications, machine learning, and robotics.
+
+
+==================================================
+22. FINAL CONTENT PRIORITY
+==================================================
+
+Highest-priority content for the first website version:
+1. Professional home page
+2. About section
+3. Cornell ECE Course Development Internship
+4. Cornell Nexus experience
+5. Lewisboro Electrical Services experience
+6. Direct-Mapped Cache project
+7. OFDM project
+8. Multi-Label Digit Classification project
+9. Study Partner Matching App
+10. Education
+11. Skills
+12. Resume download
+13. Contact page
+14. Selected interests and outdoor photos
+
+Second-phase content:
+- Detailed PCB portfolio
+- Processor-verification case study
+- Embedded-systems projects
+- Technical blog
+- Outdoor galleries
+- Eagle Scout project
+- Electrical-work case studies
+- Radar project
+- Data-science project
+- Videos and interactive diagrams
+
+
+END OF FIRST DRAFT

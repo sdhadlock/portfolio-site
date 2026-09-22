@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spencer Hadlock — Amber Retro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --void: #0A0600;
+      --surface: #120B00;
+      --panel: #160D00;
+      --amber: #FFB000;
+      --amber-dim: rgba(255,176,0,0.4);
+      --amber-glow: rgba(255,176,0,0.07);
+      --text: #D4A855;
+      --muted: #5C3D00;
+      --border: rgba(255,176,0,0.12);
+    }
+
+    html { font-size: 16px; }
+    body {
+      background: var(--void);
+      color: var(--text);
+      font-family: 'JetBrains Mono', monospace;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    /* CRT phosphor flicker */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; pointer-events: none; z-index: 9998;
+      background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.35) 100%);
+    }
+    body::after {
+      content: '';
+      position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.04) 2px, rgba(0,0,0,0.04) 4px);
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      padding: 1rem 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { color: var(--amber); font-size: 0.85rem; font-weight: 700; text-decoration: none; }
+    .nav-logo span { color: var(--muted); font-weight: 400; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.75rem; transition: color 0.2s; }
+    .nav-links a::before { content: './'; color: var(--amber-dim); }
+    .nav-links a:hover { color: var(--amber); }
+    .nav-status { font-size: 0.7rem; color: var(--amber); display: flex; align-items: center; gap: 0.5rem; }
+    .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--amber); animation: blink 2s infinite; }
+    @keyframes blink { 0%,100%{opacity:1}50%{opacity:0.3} }
+
+    /* BIG HERO */
+    .hero {
+      min-height: calc(100vh - 57px);
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3rem; align-items: center; padding: 4rem 2.5rem;
+    }
+    .prompt-line { font-size: 0.78rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .prompt-line span { color: var(--amber-dim); }
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      font-weight: 700; line-height: 0.95; letter-spacing: -0.03em;
+      color: var(--amber); margin-bottom: 1rem;
+      text-shadow: 0 0 30px rgba(255,176,0,0.3);
+    }
+    .hero-sub { color: var(--muted); font-size: 0.8rem; max-width: 44ch; line-height: 1.9; margin-bottom: 2.5rem; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem; }
+    .hero-tag { border: 1px solid var(--border); color: var(--amber); padding: 0.2rem 0.6rem; font-size: 0.62rem; }
+    .btn-row { display: flex; gap: 0.75rem; }
+    .btn {
+      border: 1px solid var(--amber); color: var(--amber); background: transparent;
+      padding: 0.8rem 1.6rem; font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+      text-decoration: none; transition: background 0.2s; display: inline-flex; align-items: center; gap: 0.4rem;
+    }
+    .btn::before { content: '> '; color: var(--amber-dim); }
+    .btn:hover { background: var(--amber-glow); }
+    .btn.fill { background: var(--amber); color: var(--void); font-weight: 700; }
+    .btn.fill::before { display: none; }
+    .btn.fill:hover { background: rgba(255,176,0,0.85); }
+
+    /* CRT MONITOR PANEL */
+    .crt-monitor {
+      position: relative;
+      background: var(--void);
+      border: 2px solid rgba(255,176,0,0.3);
+      padding: 2rem;
+      box-shadow: 0 0 40px rgba(255,176,0,0.08), inset 0 0 30px rgba(0,0,0,0.5);
+    }
+    .crt-monitor::before {
+      content: 'TERMINAL v2.1 — ACTIVE SESSION';
+      position: absolute; top: -1px; left: 1.5rem;
+      font-size: 0.6rem; color: var(--amber); letter-spacing: 0.15em;
+      background: var(--void); padding: 0 0.5rem;
+    }
+    .term-body { font-size: 0.78rem; }
+    .tl { display: flex; gap: 0.6rem; margin-bottom: 0.5rem; }
+    .tp { color: var(--amber-dim); flex-shrink: 0; }
+    .tc { color: var(--text); }
+    .to { color: var(--muted); padding-left: 0.8rem; margin-bottom: 0.75rem; font-size: 0.72rem; line-height: 1.75; }
+    .ts { color: var(--amber); }
+    .cursor { display: inline-block; width: 8px; height: 1em; background: var(--amber); vertical-align: text-bottom; animation: cur 0.8s step-end infinite; }
+    @keyframes cur { 0%,100%{opacity:1}50%{opacity:0} }
+
+    /* TICKER */
+    .ticker { overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--surface); padding: 0.6rem 0; }
+    .ticker-inner { display: flex; gap: 3rem; animation: tick 20s linear infinite; white-space: nowrap; }
+    @keyframes tick { 0%{transform:translateX(0)}100%{transform:translateX(-50%)} }
+    .ti { font-size: 0.65rem; display: flex; gap: 0.6rem; }
+    .tk { color: var(--amber); font-weight: 700; }
+    .tv { color: var(--muted); }
+
+    /* SECTIONS */
+    .section { padding: 4.5rem 2.5rem; border-top: 1px solid var(--border); }
+    .sec-tag { font-size: 0.62rem; color: var(--amber); letter-spacing: 0.2em; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+    .sec-tag::before { content: '##'; color: var(--amber-dim); }
+    h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.75rem,3.5vw,2.75rem); font-weight: 700; letter-spacing: -0.025em; color: var(--amber); margin-bottom: 2.5rem; line-height: 1.1; }
+
+    .proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--border); }
+    .proj { background: var(--panel); padding: 2rem; transition: background 0.2s; }
+    .proj:hover { background: #1C1000; }
+    .proj-num { font-size: 0.62rem; color: var(--muted); margin-bottom: 1rem; }
+    .proj h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 700; color: var(--amber); margin-bottom: 0.75rem; }
+    .proj p { font-size: 0.75rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.25rem; }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem; }
+    .proj-tag { border: 1px solid var(--border); color: var(--amber-dim); padding: 0.15rem 0.5rem; font-size: 0.6rem; }
+    .proj-links { display: flex; gap: 1rem; }
+    .proj-link { color: var(--muted); font-size: 0.72rem; text-decoration: none; transition: color 0.2s; }
+    .proj-link:hover { color: var(--amber); }
+    .proj-link::after { content: ' →'; }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1px; background: var(--border); }
+    .skill-group { background: var(--panel); padding: 2rem; }
+    .skill-group h3 { font-size: 0.65rem; color: var(--amber); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.25rem; }
+    .skill-item { font-size: 0.78rem; color: var(--muted); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+    .skill-item::before { content: '-'; color: var(--amber-dim); }
+
+    .contact-links { display: flex; flex-direction: column; gap: 0.75rem; max-width: 500px; }
+    .contact-link { display: flex; align-items: center; gap: 1rem; border: 1px solid var(--border); padding: 1rem 1.25rem; color: var(--text); text-decoration: none; font-size: 0.78rem; transition: border-color 0.2s, color 0.2s; }
+    .contact-link:hover { border-color: var(--amber); color: var(--amber); }
+    .cl-label { color: var(--amber-dim); font-size: 0.62rem; min-width: 4.5rem; }
+
+    footer { padding: 1.5rem 2.5rem; border-top: 1px solid var(--border); background: var(--surface); display: flex; justify-content: space-between; align-items: center; }
+    footer p { font-size: 0.68rem; color: var(--muted); }
+    .footer-status { display: flex; align-items: center; gap: 0.4rem; font-size: 0.68rem; color: var(--amber); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">spencer<span>@hadlock</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">about</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#skills">skills</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+  <div class="nav-status"><div class="dot"></div>open to work</div>
+</nav>
+
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ti"><span class="tk">ECE</span><span class="tv">Cornell University</span></span>
+    <span class="ti"><span class="tk">FPGA</span><span class="tv">Verilog · VHDL</span></span>
+    <span class="ti"><span class="tk">RISC-V</span><span class="tv">ISA Design</span></span>
+    <span class="ti"><span class="tk">STATUS</span><span class="tv">Open to opportunities</span></span>
+    <span class="ti"><span class="tk">ECE</span><span class="tv">Cornell University</span></span>
+    <span class="ti"><span class="tk">FPGA</span><span class="tv">Verilog · VHDL</span></span>
+    <span class="ti"><span class="tk">RISC-V</span><span class="tv">ISA Design</span></span>
+    <span class="ti"><span class="tk">STATUS</span><span class="tv">Open to opportunities</span></span>
+  </div>
+</div>
+
+<section class="hero">
+  <div>
+    <div class="prompt-line"><span>C:\USERS\SPENCER></span> whoami</div>
+    <h1>Spencer<br>Hadlock.</h1>
+    <p class="hero-sub">// ECE @ Cornell University<br>// Hardware engineer · FPGA developer · systems thinker<br>// Building circuits and code at the edge of performance.</p>
+    <div class="hero-tags">
+      <span class="hero-tag">Verilog</span><span class="hero-tag">FPGA</span><span class="hero-tag">RISC-V</span><span class="hero-tag">C++</span><span class="hero-tag">Python</span>
+    </div>
+    <div class="btn-row">
+      <a href="#projects" class="btn fill">VIEW_WORK</a>
+      <a href="#contact" class="btn">CONTACT</a>
+    </div>
+  </div>
+  <div class="crt-monitor">
+    <div class="term-body">
+      <div class="tl"><span class="tp">C:\></span><span class="tc">dir /profile</span></div>
+      <div class="to">
+        <div>Volume in drive C: HADLOCK_SYS</div>
+        <div>Directory of C:\USERS\SPENCER\</div>
+        <div>&nbsp;</div>
+        <div><span class="ts">NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> Spencer Hadlock</div>
+        <div><span class="ts">SCHOOL&nbsp;&nbsp;&nbsp;&nbsp;</span> Cornell University</div>
+        <div><span class="ts">MAJOR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> ECE</div>
+        <div><span class="ts">FOCUS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> Hardware · FPGA · Systems</div>
+        <div><span class="ts">STATUS&nbsp;&nbsp;&nbsp;&nbsp;</span> OPEN_TO_WORK</div>
+      </div>
+      <div class="tl"><span class="tp">C:\></span><span class="tc">run processor_sim.exe</span></div>
+      <div class="to">
+        <div><span class="ts">OK</span>&nbsp; Loading RISC-V bitstream...</div>
+        <div><span class="ts">OK</span>&nbsp; 47/47 test cases passed</div>
+        <div><span class="ts">OK</span>&nbsp; Clock target: 500MHz</div>
+      </div>
+      <div class="tl"><span class="tp">C:\></span><span class="tc"><span class="cursor"></span></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="sec-tag">about</div>
+  <h2>About Me</h2>
+  <p style="color:var(--muted);font-size:0.82rem;line-height:1.9;max-width:65ch;">I'm Spencer — an ECE student at Cornell building hardware that operates at the limits of physics. I'm passionate about FPGA development, digital design, and the art of making things fast. If it's close to the metal, I want to work on it.</p>
+</section>
+
+<section id="projects" class="section">
+  <div class="sec-tag">projects</div>
+  <h2>What I've Built</h2>
+  <div class="proj-grid">
+    <div class="proj">
+      <div class="proj-num">// 01</div>
+      <h3>RISC-V Single Cycle Processor</h3>
+      <p>Designed and implemented a fully functional single-cycle RISC-V processor in Verilog. Simulated and tested on FPGA with custom assembly programs.</p>
+      <div class="proj-tags"><span class="proj-tag">Verilog</span><span class="proj-tag">FPGA</span><span class="proj-tag">RISC-V</span><span class="proj-tag">Assembly</span></div>
+      <div class="proj-links"><a href="#" class="proj-link">Details</a><a href="#" class="proj-link">GitHub</a></div>
+    </div>
+    <div class="proj"><div class="proj-num">// 02</div><h3>Project 2</h3><p>Coming soon.</p></div>
+    <div class="proj"><div class="proj-num">// 03</div><h3>Project 3</h3><p>Coming soon.</p></div>
+  </div>
+</section>
+
+<section id="skills" class="section">
+  <div class="sec-tag">skills</div>
+  <h2>Tech Stack</h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <h3>Hardware</h3>
+      <div class="skill-item">Verilog / VHDL</div>
+      <div class="skill-item">FPGA (Xilinx)</div>
+      <div class="skill-item">SystemVerilog</div>
+      <div class="skill-item">Circuit Design</div>
+    </div>
+    <div class="skill-group">
+      <h3>Software</h3>
+      <div class="skill-item">C / C++</div>
+      <div class="skill-item">Python</div>
+      <div class="skill-item">Assembly (RISC-V)</div>
+      <div class="skill-item">Linux / Bash</div>
+    </div>
+    <div class="skill-group">
+      <h3>Tools</h3>
+      <div class="skill-item">Vivado / Quartus</div>
+      <div class="skill-item">ModelSim</div>
+      <div class="skill-item">GTKWave</div>
+      <div class="skill-item">LTspice</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="sec-tag">contact</div>
+  <h2>Get In Touch</h2>
+  <div class="contact-links">
+    <a href="mailto:sdh228@cornell.edu" class="contact-link"><span class="cl-label">EMAIL://</span>sdh228@cornell.edu</a>
+    <a href="https://github.com/sdhadlock" class="contact-link"><span class="cl-label">GITHUB://</span>sdhadlock</a>
+    <a href="https://linkedin.com/in/spencer-hadlock" class="contact-link"><span class="cl-label">LINKEDIN://</span>spencer-hadlock</a>
+    <a href="../SpencerHadlockResume.pdf" class="contact-link"><span class="cl-label">RESUME://</span>SpencerHadlockResume.pdf</a>
+  </div>
+</section>
+
+<footer>
+  <p>C:\USERS\SPENCER> echo "© 2025 Spencer Hadlock"</p>
+  <div class="footer-status"><div class="dot"></div>SYSTEM ONLINE</div>
+</footer>
+
+</body>
+</html>

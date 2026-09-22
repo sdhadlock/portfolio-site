@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spencer Hadlock — Portfolio Design Bake-Off</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body { background: #080808; color: #D0D0D0; font-family: 'JetBrains Mono', monospace; min-height: 100vh; }
+
+    header {
+      padding: 2.5rem 2.5rem 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .header-kicker { font-size: 0.65rem; color: #444; letter-spacing: 0.2em; margin-bottom: 0.75rem; }
+    header h1 { font-family: 'Space Grotesk', sans-serif; font-size: 1.75rem; font-weight: 700; letter-spacing: -0.03em; color: #F0F0F0; margin-bottom: 0.5rem; }
+    header p { color: #555; font-size: 0.78rem; max-width: 60ch; line-height: 1.7; }
+
+    .section-header {
+      padding: 2rem 2.5rem 1rem;
+      display: flex; align-items: center; gap: 1.5rem;
+    }
+    .section-header h2 { font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; font-weight: 700; color: #F0F0F0; letter-spacing: -0.01em; }
+    .section-header::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.06); }
+    .section-tag { font-size: 0.6rem; color: #444; letter-spacing: 0.15em; white-space: nowrap; }
+
+    main { padding: 0 2.5rem 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.25rem; }
+    .mix-grid { padding: 0 2.5rem 1rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+
+    .card {
+      background: #0F0F0F; border: 1px solid rgba(255,255,255,0.06); overflow: hidden;
+      display: flex; flex-direction: column; text-decoration: none; color: inherit;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .card:hover { border-color: var(--accent, rgba(255,255,255,0.2)); transform: translateY(-2px); }
+
+    .preview { height: 230px; overflow: hidden; position: relative; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .preview iframe { width: 200%; height: 200%; transform: scale(0.5); transform-origin: top left; pointer-events: none; border: none; }
+    .preview-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 55%, rgba(15,15,15,0.9) 100%); }
+
+    .info { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .info-num { font-size: 0.6rem; color: #444; margin-bottom: 0.4rem; }
+    .info-name { font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem; font-weight: 700; letter-spacing: -0.02em; color: var(--accent, #F0F0F0); margin-bottom: 0.5rem; }
+    .info-desc { font-size: 0.73rem; color: #555; line-height: 1.7; flex: 1; }
+    .info-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+    .tag { padding: 0.2rem 0.5rem; font-size: 0.58rem; border: 1px solid rgba(255,255,255,0.07); color: #444; }
+    .open-row {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.72rem;
+    }
+    .open-label { color: #444; }
+    .card:hover .open-label { color: var(--accent, #F0F0F0); }
+    .open-arrow { transition: transform 0.2s; color: #333; }
+    .card:hover .open-arrow { transform: translateX(4px); color: var(--accent, #F0F0F0); }
+
+    /* ACCENT COLORS */
+    .mix-a { --accent: #00D4FF; }
+    .mix-b { --accent: #00D4FF; }
+    .mix-c { --accent: #00D4FF; }
+    .c1 { --accent: #00FF85; }
+    .c2 { --accent: #FFB000; }
+    .c3 { --accent: #00D4FF; }
+    .c4 { --accent: #00FF85; }
+    .c5 { --accent: #FF2D9B; }
+
+    /* NEW badge */
+    .badge-new {
+      display: inline-block; background: var(--accent, #00D4FF);
+      color: #080808; font-size: 0.55rem; font-weight: 700;
+      padding: 0.15rem 0.4rem; letter-spacing: 0.1em;
+      margin-left: 0.5rem; vertical-align: middle;
+    }
+
+    footer {
+      padding: 1.5rem 2.5rem; border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex; justify-content: space-between;
+    }
+    footer p { font-size: 0.65rem; color: #333; }
+  </style>
+</head>
+<body>
+
+<header>
+  <p class="header-kicker">spencer@hadlock · portfolio · design bake-off</p>
+  <h1>Design Bake-Off</h1>
+  <p>Round 1: 5 terminal-style variants. Round 2: 3 mixes of your favorites (v3 neon blue + v4 minimal dark). Click any card to open full size.</p>
+</header>
+
+<!-- ROUND 2 MIXES -->
+<div class="section-header">
+  <h2>Round 2 — v3 × v4 Mixes <span class="badge-new">NEW</span></h2>
+  <span class="section-tag">pick one of these</span>
+</div>
+<div class="mix-grid">
+
+  <a href="mix-a-void-blue.html" target="_blank" class="card mix-a">
+    <div class="preview">
+      <iframe src="mix-a-void-blue.html" scrolling="no" tabindex="-1"></iframe>
+      <div class="preview-overlay"></div>
+    </div>
+    <div class="info">
+      <div class="info-num">mix-a /</div>
+      <div class="info-name">Void Blue</div>
+      <p class="info-desc">v4's massive full-width type on v3's deep navy background. Cyan accent used minimally — just the dot, section labels, and stat glows. Maximum breathing room, maximum impact.</p>
+      <div class="info-tags">
+        <span class="tag">Navy BG</span><span class="tag">Big Type</span><span class="tag">Cyan Accent</span><span class="tag">v4 Layout</span>
+      </div>
+      <div class="open-row"><span class="open-label">Open full page</span><span class="open-arrow">→</span></div>
+    </div>
+  </a>
+
+  <a href="mix-b-glass-minimal.html" target="_blank" class="card mix-b">
+    <div class="preview">
+      <iframe src="mix-b-glass-minimal.html" scrolling="no" tabindex="-1"></iframe>
+      <div class="preview-overlay"></div>
+    </div>
+    <div class="info">
+      <div class="info-num">mix-b /</div>
+      <div class="info-name">Glass Minimal</div>
+      <p class="info-desc">v4's big type on the left, v3's glass panel on the right — but as a clean data card (no terminal prompt, just key-value rows). The most polished and professional of the three mixes.</p>
+      <div class="info-tags">
+        <span class="tag">Split Hero</span><span class="tag">Glass Card</span><span class="tag">Clean Data</span><span class="tag">Most Polished</span>
+      </div>
+      <div class="open-row"><span class="open-label">Open full page</span><span class="open-arrow">→</span></div>
+    </div>
+  </a>
+
+  <a href="mix-c-split-dark.html" target="_blank" class="card mix-c">
+    <div class="preview">
+      <iframe src="mix-c-split-dark.html" scrolling="no" tabindex="-1"></iframe>
+      <div class="preview-overlay"></div>
+    </div>
+    <div class="info">
+      <div class="info-num">mix-c /</div>
+      <div class="info-name">Split Dark</div>
+      <p class="info-desc">Hard split hero: v4's pure black on the left with giant type, v3's navy on the right with a vertical stats column and availability box. Two-tone layout, very editorial. The boldest of the mixes.</p>
+      <div class="info-tags">
+        <span class="tag">Split BG</span><span class="tag">Two-Tone</span><span class="tag">Stats Column</span><span class="tag">Most Dramatic</span>
+      </div>
+      <div class="open-row"><span class="open-label">Open full page</span><span class="open-arrow">→</span></div>
+    </div>
+  </a>
+
+</div>
+
+<!-- ROUND 1 ORIGINALS -->
+<div class="section-header">
+  <h2>Round 1 — Original 5</h2>
+  <span class="section-tag">for reference</span>
+</div>
+<main>
+
+  <a href="v1-green-terminal.html" target="_blank" class="card c1">
+    <div class="preview">
+      <iframe src="v1-green-terminal.html" scrolling="no" tabindex="-1"></iframe>
+      <div class="preview-overlay"></div>
+    </div>
+    <div class="info">
+      <div class="info-num">v1 /</div>
+      <div class="info-name">Green Terminal</div>
+      <p class="info-desc">Classic green-on-black. The purest terminal feel with live ticker and code panel.</p>
+      <div class="info-tags"><span class="tag">Green / Black</span><span class="tag">Terminal</span><span class="tag">Ticker</span></div>
+      <div class="open-row"><span class="open-label">Open full page</span><span class="open-arrow">→</span></div>
+    </div>
+  </a>
+
+  <a href="v2-amber-retro.html" target="_blank" class="card c2">
+    <div class="preview">
+      <iframe src="v2-amber-retro.html" scrolling="no" tabindex="-1"></iframe>
+      <div class="preview-overlay"></div>
+    </div>
+    <div class="info">
+      <div class="info-num">v2 /</div>
+      <div class="info-name">Amber Retro</div>
+      <p class="info-desc">Old-school CRT amber phosphor. Retro IBM terminal energy with a warm glow.</p>
+      <div class="info-tags"><span class="tag">Amber / Black</span><span class="tag">CRT</span><span class="tag">Retro</span></div>
+      <div class="open-row"><span class="open-label">Open full page</span><span class="open-arrow">→</span></div>
+    </div>
+  </a>
+
+  <a href="v3-neon-blue.html" target="_blank" class="card c3">
+    <div class="preview">
+      <iframe src="v3-neon-blue.html" scrolling="no" tabindex="-1"></iframe>
+      <div class="preview-overlay"></div>
+    </div>
+    <div class="info">
+      <div class="info-num">v3 /</div>
+      <div class="info-name">Neon Blue ★</div>
+      <p class="info-desc">Electric cyan on deep navy. Holographic panel, glow effects. One of your two favorites.</p>
+      <div class="info-tags"><span class="tag">Cyan / Navy</span><span class="tag">Glow</span><span class="tag">Holographic</span></div>
+      <div class="open-row"><span class="open-label">Open full page</span><span class="open-arrow">→</span></div>
+    </div>
+  </a>
+
+  <a href="v4-minimal-dark.html" target="_blank" class="card c4">
+    <div class="preview">
+      <iframe src="v4-minimal-dark.html" scrolling="no" tabindex="-1"></iframe>
+      <div class="preview-overlay"></div>
+    </div>
+    <div class="info">
+      <div class="info-num">v4 /</div>
+      <div class="info-name">Minimal Dark ★</div>
+      <p class="info-desc">Huge type, pure black, single accent. Very GitHub / Linear. Your other favorite.</p>
+      <div class="info-tags"><span class="tag">White / Black</span><span class="tag">Big Type</span><span class="tag">Minimal</span></div>
+      <div class="open-row"><span class="open-label">Open full page</span><span class="open-arrow">→</span></div>
+    </div>
+  </a>
+
+  <a href="v5-synthwave.html" target="_blank" class="card c5">
+    <div class="preview">
+      <iframe src="v5-synthwave.html" scrolling="no" tabindex="-1"></iframe>
+      <div class="preview-overlay"></div>
+    </div>
+    <div class="info">
+      <div class="info-num">v5 /</div>
+      <div class="info-name">Synthwave</div>
+      <p class="info-desc">Pink + purple + cyan. Retrowave grid, gradient text. Most energetic.</p>
+      <div class="info-tags"><span class="tag">Pink / Purple</span><span class="tag">Synthwave</span><span class="tag">Gradient</span></div>
+      <div class="open-row"><span class="open-label">Open full page</span><span class="open-arrow">→</span></div>
+    </div>
+  </a>
+
+</main>
+
+<footer>
+  <p>spencer@hadlock · design bake-off · powered by impeccable</p>
+  <p>click any card to open full size in a new tab</p>
+</footer>
+
+</body>
+</html>
