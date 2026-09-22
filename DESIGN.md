@@ -190,7 +190,7 @@ Pill-shaped, `panel` background with `line` border by default; an accent variant
 - Mobile: hamburger reveals a clipped-in dropdown, white background, hairline divider per link.
 
 ### Avatar (hero photo)
-`.hero-photo`: a 128px circular headshot centered above the hero badge — `object-fit: cover`, thin white border plus a 1px hairline ring (`box-shadow: 0 0 0 1px var(--line)`) instead of a heavy frame, keeping it consistent with the rest of the flat, hairline-bordered system.
+`.hero-photo`: a 96px circular headshot centered above the hero badge — `object-fit: cover`, thin white border plus a 1px hairline ring (`box-shadow: 0 0 0 1px var(--line)`) instead of a heavy frame, keeping it consistent with the rest of the flat, hairline-bordered system.
 
 ### Sub-page Hero (`.page-hero`)
 A lighter version of the main hero for secondary pages like `projects.html`: centered **page title** type (`2.5rem`, see Hierarchy) + one-line intro, no stats/buttons, plus a `.back-link` above the title and an optional `.project-jump` pill row below it for in-page navigation to each detail section.

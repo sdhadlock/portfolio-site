@@ -144,8 +144,8 @@ nav .nav-links a:hover {
 
 .hero-photo {
     display: block;
-    width: 128px;
-    height: 128px;
+    width: 96px;
+    height: 96px;
     margin: 0 auto 1.5rem;
     border-radius: 50%;
     object-fit: cover;
