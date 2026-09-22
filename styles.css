@@ -12,12 +12,12 @@
 :root {
     --accent: #1d5fd6;
     --accent-dark: #14459e;
-    --ink: #1a1a1a;
-    --muted: #555;
-    --faint: #888;
+    --ink: #000000;
+    --muted: #1a1a1a;
+    --faint: #333333;
     --line: #e5e5e5;
     --bg: #ffffff;
-    --panel: #f7f8fa;
+    --panel: #ffffff;
 }
 
 html,
@@ -240,7 +240,7 @@ nav .nav-links a:hover {
 }
 
 .section-intro {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--muted);
     line-height: 1.7;
     max-width: 65ch;
@@ -474,7 +474,7 @@ footer p {
     }
 
     .hero p {
-        font-size: 1.05rem;
+        font-size: 1rem;
     }
 
     .hero-stats {

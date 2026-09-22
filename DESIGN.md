@@ -2,12 +2,12 @@
 name: Spencer Hadlock Portfolio
 description: Light, simple, homebrew engineering portfolio — system sans-serif, white surfaces, one blue accent.
 colors:
-  ink: "#1a1a1a"
-  muted: "#555555"
-  faint: "#888888"
+  ink: "#000000"
+  muted: "#1a1a1a"
+  faint: "#333333"
   line: "#e5e5e5"
   bg: "#ffffff"
-  panel: "#f7f8fa"
+  panel: "#ffffff"
   accent: "#1d5fd6"
   accent-dark: "#14459e"
   accent-wash: "rgba(29,95,214,0.06)"
@@ -15,37 +15,46 @@ colors:
   accent-border: "rgba(29,95,214,0.2)"
   accent-border-soft: "rgba(29,95,214,0.25)"
   footer-online: "#4ade80"
+  shadow: "rgba(0,0,0,0.06)"
 typography:
+  fontStack: "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif"
   hero:
-    fontFamily: "system-ui sans-serif stack"
+    fontFamily: "{typography.fontStack}"
     fontSize: "3.25rem"
+    fontSizeMobile: "2.4rem"
     fontWeight: 800
     lineHeight: 1.1
   headline:
-    fontFamily: "system-ui sans-serif stack"
+    fontFamily: "{typography.fontStack}"
     fontSize: "2rem"
+    fontSizeMobile: "1.6rem"
     fontWeight: 700
     lineHeight: 1.2
   title:
-    fontFamily: "system-ui sans-serif stack"
+    fontFamily: "{typography.fontStack}"
     fontSize: "1.15rem"
     fontWeight: 700
   meta:
-    fontFamily: "system-ui sans-serif stack"
+    fontFamily: "{typography.fontStack}"
     fontSize: "0.8rem"
     fontWeight: 600
   body:
-    fontFamily: "system-ui sans-serif stack"
+    fontFamily: "{typography.fontStack}"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.75
   bodySmall:
-    fontFamily: "system-ui sans-serif stack"
-    fontSize: "0.92rem"
+    fontFamily: "{typography.fontStack}"
+    fontSize: "0.9rem"
     fontWeight: 400
     lineHeight: 1.7
+  label:
+    fontFamily: "{typography.fontStack}"
+    fontSize: "0.75rem"
+    fontSizeAlt: "0.82rem"
+    fontWeight: 400
   tag:
-    fontFamily: "system-ui sans-serif stack"
+    fontFamily: "{typography.fontStack}"
     fontSize: "0.75rem"
     fontWeight: 400
 rounded:
@@ -111,12 +120,12 @@ A near-monochrome light palette with exactly one accent color.
 - **Accent Blue** (`#1D5FD6`): the one accent. Used for the hero badge, stat values, card meta lines, accented tags, hover states on nav/links/cards, and the "open to work" value. Darkens to `#14459E` on button hover.
 
 ### Neutral
-- **Ink** (`#1A1A1A`): primary text, headings, footer background.
-- **Muted** (`#555555`): body copy.
-- **Faint** (`#888888`): secondary/label text (stat labels, fact keys).
+- **Ink** (`#000000`): headings, footer background, primary text.
+- **Muted** (`#1A1A1A`): body copy — near-black, per the site's "white background, black text" requirement.
+- **Faint** (`#333333`): secondary/label text (stat labels, fact keys).
 - **Line** (`#E5E5E5`): all hairline borders and dividers.
-- **Background** (`#FFFFFF`): page and card background.
-- **Panel** (`#F7F8FA`): subtle fill for the about fact-card, contact section, and default tags.
+- **Background** (`#FFFFFF`): page, card, and panel background — kept uniformly white rather than tinted, so the whole page reads as plain white/black.
+- **Shadow** (`rgba(0,0,0,0.06)`): the sole non-palette value, used only for the low-opacity card-hover lift shadow.
 
 ### Named Rules
 **The One Accent Rule.** Blue is the only accent color in the system. Anything needing emphasis reuses this blue (or its wash/border tints) rather than introducing a new hue.
