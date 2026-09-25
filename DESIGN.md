@@ -108,7 +108,7 @@ components:
 
 **Creative North Star: "Homebrew Clean"**
 
-The site reads like a well-kept single-page brochure: white canvas, generous whitespace, plain system type, and one restrained blue accent used only where it earns attention — the logo dot, a stat number, a hovered link, a status badge. Structure carries the design instead of ornament: a sticky nav, a centered hero, a stack of bordered sections, and simple rounded cards for anything repeating (education, experience, projects, skills, interests).
+The site reads like a well-kept single-page brochure: white canvas, generous whitespace, plain system type, and one restrained blue accent used only where it earns attention — the logo dot, a stat number, a hovered link, a status badge. Structure carries the design instead of ornament: a sticky nav, a centered hero, a stack of bordered sections, and simple rounded cards for anything repeating (education, experience, projects, skills). The one deliberate exception is Interests: card-free photo vignettes (`.vignette`) that alternate image left/right with a slight scrapbook tilt, written in a personal, non-technical voice.
 
 This replaced an earlier dark "Signal Path" monospace theme. The redesign intentionally trades the terminal/schematic aesthetic for something plainer and easier to scan — content-forward rather than atmosphere-forward.
 
